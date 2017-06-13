@@ -1,0 +1,39 @@
+@media screen and ( max-device-height:720px){
+     #wrap{ height:720px;}
+	 #footer{ margin-top:-17px;}
+}
+
+@media screen and ( max-device-height:768px){
+     #wrap{ 
+     	height:768px;
+     	background: url("../images/bg_coffie1.jpg") no-repeat scroll center 0 #030B22;
+     }
+}
+
+@media screen and ( min-device-height:800px) {
+     #wrap{ 
+     	height:800px;
+     	background: url("../images/bg_coffie1.jpg") no-repeat scroll center 0 #030B22;
+     }
+}
+
+@media screen and ( min-device-height:900px) {
+     #wrap{ 
+    	height:900px;
+     	background: url("../images/bg_coffie1.jpg") no-repeat scroll center 0 #030B22;
+     }
+}
+
+@media screen and ( min-device-height:1080px) {
+     #wrap{
+     	height:1080px;
+     	background: url("../images/bg_coffie_1920_1200.jpg") no-repeat scroll center 0 #030B22;
+     }
+}
+
+@media screen and ( min-device-height:1200px) {
+     #wrap{ 
+     	height:1200px;
+     	background: url("../images/bg_coffie_1920_1200.jpg") no-repeat scroll center 0 #030B22;
+     }
+}

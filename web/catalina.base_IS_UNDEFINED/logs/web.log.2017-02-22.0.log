@@ -1,0 +1,39 @@
+2017-02-22 09:18:29.778 [main] DEBUG org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+2017-02-22 09:18:29.797 [main] DEBUG org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+2017-02-22 09:18:29.798 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://api.weixin.qq.com:443][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2017-02-22 09:18:29.820 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://api.weixin.qq.com:443][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-02-22 09:18:29.822 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://api.weixin.qq.com:443
+2017-02-22 09:18:29.831 [main] DEBUG o.a.http.impl.conn.HttpClientConnectionOperator - Connecting to api.weixin.qq.com/140.207.119.12:443
+2017-02-22 09:18:30.139 [main] DEBUG o.a.http.impl.conn.HttpClientConnectionOperator - Connection established 192.168.1.127:51862<->140.207.119.12:443
+2017-02-22 09:18:30.139 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Executing request GET /sns/userinfo?access_token=OezXcEiiBSKSxW0eoylIeNit16UEqaKikxOc9fAreZ_2UJUzAyuHgTmAWe4oWYWu0Ujj4pr3HNfBQ_hxAPQP2vUqNxGsTZaICNbuMoUbkUaqhm-tcZXaO9YU-Ui1Le6boHAzeZ6ImGQKHAWDSjddYg&openid=ok621s6wv6yhVKSahgU1kSBXno5Y&lang=en HTTP/1.1
+2017-02-22 09:18:30.139 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+2017-02-22 09:18:30.140 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> GET /sns/userinfo?access_token=OezXcEiiBSKSxW0eoylIeNit16UEqaKikxOc9fAreZ_2UJUzAyuHgTmAWe4oWYWu0Ujj4pr3HNfBQ_hxAPQP2vUqNxGsTZaICNbuMoUbkUaqhm-tcZXaO9YU-Ui1Le6boHAzeZ6ImGQKHAWDSjddYg&openid=ok621s6wv6yhVKSahgU1kSBXno5Y&lang=en HTTP/1.1
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Host: api.weixin.qq.com
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.3.5 (java 1.5)
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "GET /sns/userinfo?access_token=OezXcEiiBSKSxW0eoylIeNit16UEqaKikxOc9fAreZ_2UJUzAyuHgTmAWe4oWYWu0Ujj4pr3HNfBQ_hxAPQP2vUqNxGsTZaICNbuMoUbkUaqhm-tcZXaO9YU-Ui1Le6boHAzeZ6ImGQKHAWDSjddYg&openid=ok621s6wv6yhVKSahgU1kSBXno5Y&lang=en HTTP/1.1[\r][\n]"
+2017-02-22 09:18:30.141 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Host: api.weixin.qq.com[\r][\n]"
+2017-02-22 09:18:30.142 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2017-02-22 09:18:30.142 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.3.5 (java 1.5)[\r][\n]"
+2017-02-22 09:18:30.142 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2017-02-22 09:18:30.142 [main] DEBUG org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+2017-02-22 09:18:30.171 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2017-02-22 09:18:30.171 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Connection: keep-alive[\r][\n]"
+2017-02-22 09:18:30.171 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Type: text/plain[\r][\n]"
+2017-02-22 09:18:30.171 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Date: Wed, 22 Feb 2017 01:18:28 GMT[\r][\n]"
+2017-02-22 09:18:30.172 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "Content-Length: 121[\r][\n]"
+2017-02-22 09:18:30.172 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+2017-02-22 09:18:30.172 [main] DEBUG org.apache.http.wire - http-outgoing-0 << "{"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: tQ84ia0308ns87 ]"}"
+2017-02-22 09:18:30.174 [main] DEBUG org.apache.http.headers - http-outgoing-0 << HTTP/1.1 200 OK
+2017-02-22 09:18:30.175 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Connection: keep-alive
+2017-02-22 09:18:30.175 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Type: text/plain
+2017-02-22 09:18:30.175 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Date: Wed, 22 Feb 2017 01:18:28 GMT
+2017-02-22 09:18:30.175 [main] DEBUG org.apache.http.headers - http-outgoing-0 << Content-Length: 121
+2017-02-22 09:18:30.194 [main] DEBUG org.apache.http.impl.execchain.MainClientExec - Connection can be kept alive indefinitely
+2017-02-22 09:18:30.202 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection [id: 0][route: {s}->https://api.weixin.qq.com:443] can be kept alive indefinitely
+2017-02-22 09:18:30.202 [main] DEBUG o.a.h.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://api.weixin.qq.com:443][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2017-02-22 09:18:30.202 [main] DEBUG com.ai.web.controller.LoginController - ===========================str==================
+2017-02-22 09:18:30.202 [main] DEBUG com.ai.web.controller.LoginController - {"errcode":40001,"errmsg":"invalid credential, access_token is invalid or not latest, hints: [ req_id: tQ84ia0308ns87 ]"}
+2017-02-22 09:18:30.202 [main] DEBUG com.ai.web.controller.LoginController - ===========================str==================

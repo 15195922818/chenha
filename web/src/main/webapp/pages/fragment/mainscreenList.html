@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables" th:fragment="mainscreenList">
+<head>
+</head>
+
+<body>
+	<ul class="piculclas">
+		<li class="picliclas infobar"  style="width:100%">
+			<input id="serialId" name="serialId" style="display:none" th:value="${mainScreenData.serialId}" />
+			<div style="float:left;height:100%;width:35%;text-align:left;">
+				<a style="margin-left:10%;margin-top:15%;display:block;">
+					<img id="PicAdressId" style='width:300px;height:200px' th:src="@{'' + ${mainScreenData.PicAddress}}" />
+				</a>
+			</div>
+			<div style="float:left;height:100%;width:45%;text-align:left;">
+				<div style="margin-top:12%;margin-left:18%;">
+					<div class="showhideOutDiv" style="margin-top:10%;">
+						<label>图片名称:&nbsp;&nbsp;&nbsp;</label>
+						<label id="PicTypeNameId" th:text ="${mainScreenData.PicTypeName}" />
+					</div>
+					
+					<div class="showhideOutDiv" style="margin-top:10%;">
+						<lable>主屏名称:&nbsp;&nbsp;&nbsp;</lable>
+						<lable id="screenName" th:text="${mainScreenData.screenName}" />
+						<input id="oldscreenId" name="oldscreenId" style="display:none" th:value="${mainScreenData.screenId}"/>
+					</div>
+				</div>
+			</div>
+			<div style="float:left;height: 100%;width:20%;text-align:right;">
+				<div style="bottom:0;position:Relative;bottom:0px;">
+					<a id="saveObj" class="btn-green btn-my" href="javascript:void(0)" onclick="edit(this)">修改</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>

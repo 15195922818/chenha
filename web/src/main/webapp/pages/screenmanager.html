@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head>
+<title>demo</title>
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+<meta http-equiv="cache-control" content="no-cache"></meta>
+<meta http-equiv="expires" content="0"></meta>
+<meta http-equiv="X-UA-Compatible" content="chrome=1"></meta>
+<meta HTTP-EQUIV="Pragma" CONTENT="no-cache"></meta>
+<script src="../static/js/jquery/1.7.1/jquery.js" th:src="@{/static/js/jquery/1.7.1/jquery.js}"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style>
+.dv{
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+	text-align:center;
+	background-color: red;
+	width:100px;
+	height:100px;
+	border-radius:150px;
+	vertical-align: middle;
+	background: #00FF00 url(../static/game/go.png);
+}
+.dv1{
+	width:100px;
+	height:100px;
+	background-color:blue;
+	box-shadow:-3px -3px 3px black;
+}
+.dv2{
+	text-shadow: 0 1px 0 white;
+	color:black;
+}
+.dv3{
+	width:200px;
+	height:200px;
+	background-color:red;
+	-ms-transition:2s;
+}
+.dv3:hover{
+	transform:rotate(360deg);
+}
+</style>
+</head>
+<body>
+	<div class="dv">q</div>
+	<div class="dv1">b</div>
+	<div class="dv2">c</div>
+	<div class="dv3">我要旋转</div>
+</body>
+</html>

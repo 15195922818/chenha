@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <!-- 系统监听器 -->
+    <bean id="systemListenerService" class="com.ai.lottery.core.service.impl.SystemListenerServiceImpl">
+        <!-- 系统启动服务 -->
+        <property name="startupServices">
+            <list>
+                <ref bean="systemConfigListener"/>
+                <ref bean="systemInterfaceListener"/>
+            </list>
+        </property>
+        <!-- 系统停止服务 -->
+        <property name="shutdownServices">
+            <list>
+                <ref bean="systemConfigListener"/>
+                <ref bean="systemInterfaceListener"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="myApiConfig" class="com.github.sd4324530.fastweixin.api.config.ApiConfig" lazy-init="false">
+        <!--<constructor-arg name="appid" value="wx8c33ff895df5d0d9"></constructor-arg>-->
+        <!--<constructor-arg name="secret" value="0705aafac0bef944de4c485d71fce900"></constructor-arg>-->
+        <constructor-arg name="appid" value="wxd8a2698dfd27b86c"></constructor-arg>
+        <constructor-arg name="secret" value="e48be2b95cdb6e3b3fd9844319bddb4d"></constructor-arg>
+    </bean>
+</beans>

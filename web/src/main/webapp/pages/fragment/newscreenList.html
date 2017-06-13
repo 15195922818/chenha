@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables" >
+<head>
+</head>
+
+<body >
+		<ul class="piculclas" th:fragment="newscreenList">
+			<li class="picliclas infobar" th:each="ele1 : ${allScreenList}" th:if="${ele1.picTypeId}!=mainscreen" style="width:100%;position:relative;">
+				<div style="position:absolute;margin-top:15px;padding-left:20px;float:left;height:50px;width:100%;text-align:left;">
+					<label id="screenName" name="screenName" th:text="${ele1.screenName}" class="lbl pad"></label>
+				</div>
+				<div style="height: 50px;width:350px;right:0;top:15px;position:absolute;">
+					<a class="btn-default btn-my" th:href="@{/newpad?serialId=}+${ele1.serialId}" target="_blank">预览</a>
+					<label class="lbl pad green"
+						   th:if="${ele1.screenId == 'mainscreen'}">当前主屏</label>
+					<a class="screenLevel btn-green btn-orange btn-my"
+					   th:if="${ele1.screenId != 'mainscreen'}" onclick="insertObjConfirm(this)">设为主屏</a>
+					<a id="saveObj" class="btn-green btn-my" href="javascript:void(0)" onclick="edit(this);">修改</a>
+					<a id="deleteObj" class="btn-green btn-my" href="javascript:void(0)" onclick="insertObjConfirm(this)">删除</a>
+				</div>
+				<div style="height:240px;width:100%;top:61px;position: relative;">
+					<div style="height:50px;width:100%;right:0;top:5px;position:absolute;">
+						<a class="btn-green btn-orange btn-my addPicToScreen" style="float:left;margin-left:50px;" onclick="addPicToScreen(this)">添加图片</a>
+						<a class="btn-green btn-my deleteAllPicFromScreen" href="javascript:void(0)" onclick="insertObjConfirm(this)">删除所有</a>
+					</div>
+					<div style="" class="picListWrap">
+						<ul style="" class="picList">
+							<li th:each="pic : ${ele1.weixinScreenPicList}" class="pic_wrap">
+								<img th:src="@{'/'}+${pic.picAddress}"/>
+								<span th:text="${pic.picTypeName}"></span>
+								<em class="delete" onclick="insertObjConfirm(this);">删除</em>
+								<em class="edit " onclick="changeThisPic(this);">修改</em>
+								<input type="hidden" name="picTypeId" th:value="${pic.picTypeId}"/>
+								<input type="hidden" name="serialId" th:value="${pic.serialId}"/>
+							</li>
+							<li>
+								<a onclick="addPicToScreen(this)" class="addMore addPicToScreen"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<input id="serialId" name="serialId" type="hidden" th:value="${ele1.serialId}" />
+				<input name="picTypeIds" type="hidden" th:value="${ele1.WholePicTypeId}" />
+			</li>
+		</ul>
+</body>
+</html>

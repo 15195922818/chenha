@@ -1,0 +1,15 @@
+/*参数维护的样式*/
+.inputoutClass{
+	margin-left:6%;
+	float:left;
+	width:230px;
+}
+.inputoutClass label{
+	vertical-align:middle;
+	display:block;
+}
+.inputoutClass input{
+	vertical-align:middle;
+	width:50%;
+}
+/*\参数维护的样式*/

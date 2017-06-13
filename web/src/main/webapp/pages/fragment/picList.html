@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head>
+</head>
+
+<body>
+<ul class="piculclas" th:fragment="picList">
+	<li class="picliclas infobar" th:each="ele1 : ${activePicDataList}"  style="width:100%">
+		<div style="float:left;height:250px;width:35%;text-align:left;">
+			<a style="margin-left:10%;margin-top:15%;display:block;">
+				<img style='width:300px;height:200px' th:src="@{'' + ${ele1.PicAddress}}" />
+			</a>
+		</div>
+		<div style="float:left;width:35%;height: 100%;">
+			<dl style="height: 100%;">
+			   <dt style="height:20%;padding-left:20%;padding-top:15%;" th:text="${ele1.PicTypeName}"></dt>
+			   <dd style="height:45%;padding-left:20%;" >
+			   		<fieldset style="height:100%">
+					    <legend style="height:20%;">活动介绍:</legend>
+					    <p  style="width:96%;height:80%;" th:text="${ele1.PicDepict}"></p>
+					</fieldset>
+			   </dd>
+			</dl>
+		</div>
+		<div style="float:left;width:30%;text-align:right;height:100%;">
+			<div style="height:15%;text-align: right;">
+				<input class="screenPosition" type="button" style="width:50px;height:28px;;border: 1px solid grey;cursor:pointer;" th:value="${ele1.screenName}" />
+			</div>
+			<div style="padding-right:18%;display:none;" class="output" th:id="@{'output' + ${ele1.PicTypeId}}" th:attr=" param = ${ele1.PicTypeId}"></div>
+			<div style="padding-top:5%;padding-right:10%;text-align:right" class="datebox">
+				<div class="query" style="width:100%;height:100%;">
+					<span class="hitForm" style="" onclick="FormSubmit(this)"><a href="javascript:void(0);">活动评论&nbsp;&nbsp;</a></span>
+					<form class="getCommentByPicId" style="display:none;" th:action="@{message}" method="post">
+						<input  name="messageState" th:value="1" />
+						<input  name="PicTypeId" th:value="${ele1.PicTypeId}" />
+						<input name="seeComment" value="true" />
+					</form>
+				</div>
+				<div style="width:100%;">
+					<span>上传时间:&nbsp;&nbsp;
+						<em th:text="${ele1.SaveDateTime}">上传时间:</em>
+					</span>
+				</div>
+			</div>
+		</div>
+		<input style="display:none;" name="serialId" th:value="${ele1.serialId}" />
+		<input style="display:none;" th:value="${ele1.screenId}" />
+		<span style="display:none" th:text="${ele1.PicTypeId}"></span>
+	</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables" th:fragment="paramList">
+<head>
+</head>
+
+<body>
+	<ul class="piculclas" id="refrashPart">
+		<li class="picliclas infobar" th:each="ele1 : ${paramDatalist}"  style="width:100%">
+			<div class="listDiv" style="margin-top:2%;height:100%;width:90%;float:left;">
+				<div style="height:33%;">
+					<div class="inputoutClass">
+						<label>参数大类:</label><input name="subsys_code" ableupdate="true" disabled="disabled" th:value="${ele1.subsys_code}" />
+					</div>
+					<div class="inputoutClass">
+						<label>大类编号:</label><input name="param_attr" ableupdate="true" disabled="disabled" th:value="${ele1.param_attr}" />
+					</div>
+					<div class="inputoutClass">
+						<label>参数小类:</label><input name="param_code" ableupdate="true" disabled="disabled" th:value="${ele1.param_code}" />
+						<input name="old_param_code" ableupdate="true" style="display:none;" th:value="${ele1.param_code}" />
+					</div>
+				</div>
+				<div style=";height:33%;">
+					<div class="inputoutClass">
+						<label>小类名称:</label><input name="param_name" ableupdate="true" disabled="disabled" th:value="${ele1.param_name}" />
+					</div>
+					<div class="inputoutClass">
+						<label>参数值:</label><input name="para_code1" ableupdate="true" disabled="disabled" th:value="${ele1.para_code1}" />
+					</div>
+					<div class="inputoutClass">
+						<label>单位:</label><input name="para_code2" ableupdate="true"  disabled="disabled" th:value="${ele1.para_code2}" />
+					</div>
+				</div>
+				<div style="height:34%;">
+					<div class="inputoutClass">
+						<label>开始时间:</label>  <input disabled="disabled" type="text" class="dateinput" id="start_date" name="start_date" th:value="${ele1.start_date}"/>
+					</div>
+					<div class="inputoutClass">
+						<label>结束时间:</label><input disabled="disabled" type="text" class="dateinput" id="end_date" name="end_date" th:value="${ele1.end_date}" />
+					</div>
+					<!-- 
+					<div class="inputoutClass">
+						<label>更新时间:</label><input name="update_time" ableupdate="false" disabled="disabled" th:value="${ele1.update_time}" />
+					</div>
+					 -->
+				</div>
+			</div>
+			<div style="width:10%;float:left;height:100%;position:Relative;">
+				<div style="position:absolute;bottom:10%;width:100%;">
+					<a id="save" class="btn-green btn-my" href="javascript:void(0)" onclick="saveDiv(this)">修改</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>

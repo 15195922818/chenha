@@ -1,0 +1,170 @@
+.wall-body{
+	position: absolute;
+	top: 100px;
+	left: 0;
+	z-index: 1000;
+}
+.wall-container{
+
+}
+.true-wall{
+	width: 910px;
+	height: 520px;
+	position: relative;
+	overflow: hidden;
+}
+.true-wall li.signers{
+	width: 180px;
+	height: 180px;
+	float: left;
+}
+.true-wall li div.ok{
+	/*clear: both;*/
+	position: absolute;
+	bottom: 0;
+	width: 130px;
+	height: 130px;
+	cursor: pointer;
+
+}
+.true-wall li div.ok span{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #cdcdcd;
+	font-size: 24px;
+	text-align: center;
+	overflow: hidden;
+	filter:alpha(opacity=0);       /* IE */
+  	-moz-opacity:0;              /* 老版Mozilla */
+  	-khtml-opacity:0;              /* 老版Safari */
+  	opacity: 0;
+}
+.true-wall li div.ok img{
+	width: 130px;
+	height: 130px;
+	/*border-radius: 45%;*/
+	filter:alpha(opacity=50);       /* IE */
+  	-moz-opacity:0.5;              /* 老版Mozilla */
+  	-khtml-opacity:0.5;              /* 老版Safari */
+  	/*opacity: 0.5; */          /* 支持opacity的浏览器*/
+}
+
+.wall-container .msg-detail{
+	width: 910px;
+	height: 430px;
+	position: relative;
+	overflow: hidden;
+}
+.wall-container .wall-group{
+	width: 900px;
+	height: 90px;
+	margin-left: 15px;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.wall-container .wall-group .group-warp{
+	margin: 5px;
+	width: 80px;
+	height: 80px;
+	float: left;
+	border-radius: 50%;
+	cursor: pointer;
+	background: white;
+}
+.wall-container .wall-group .group-warp img.main{
+	width: 70px;
+	height: 70px;
+	margin: 5px;
+	border-radius: 50%;
+}
+/*.icon-bubble{
+	background: url('../images/icon-bubble.svg') no-repeat 0 0 ;
+}*/
+.wall-container .wall-group .group-warp .msg-content{
+	display: none;
+}
+.wall-container .wall-group .group-warp.style1{
+	/*margin-top:100%;*/
+}
+.wall-container .msg-detail{
+	/*background: #ccc;*/
+	border-radius: 20px;
+	padding-top:20px;
+}
+.msg-detail .all-wrap{
+	position: relative;
+	margin-left: 100px;
+	clear: both;
+	width: 920px;
+}
+.msg-detail .group-warp{
+	width: 100%;
+	float: left;
+	position: relative;
+	margin: 0px;
+	padding-top: 10px;
+
+}
+
+
+.msg-detail .group-warp img.main{
+	width: 95px;
+	height: 95px;
+	margin-left: 15px;
+	border-radius: 50%;
+	float: left;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	border:4px solid #e2e2e2;
+}
+.msg-detail .group-warp .icon-bubble{
+	position: absolute;
+}
+.msg-detail .group-warp .msg-content{
+	position: relative;
+	margin-left: 130px;
+	margin-top:10px;
+	min-height: 80px;
+	clear: both;
+	width: 740px;
+
+}
+.msg-detail .group-warp .msg-content div{
+	display: block;
+	border-radius: 10px;
+	background: white;
+	color: #2e2e2e;
+	float: left;
+	clear: both;
+	/*opacity: 0;*/
+}
+.msg-detail .group-warp .msg-content p{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-size: 45px;
+	/*font-weight: bold;*/
+}
+
+.msg-detail .group-warp .msg-content span{
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 20px;
+	display:inherit;
+}
+
+.msg-detail .group-warp .msg-content div img{
+	height: 90px;
+	padding: 5px;
+	cursor: pointer;
+}
+#control_menu{
+	opacity: 0;
+}

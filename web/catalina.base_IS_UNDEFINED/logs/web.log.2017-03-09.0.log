@@ -1,0 +1,2360 @@
+2017-03-09 09:10:10.079 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 09:10:10.175 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 09:10:10.194 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 09:10:10.203 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 09:10:10.206 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 09:10:10.238 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 09:10:10.238 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 09:10:10.239 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 09:10:10.239 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 09:10:10.241 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 09:10:10.242 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 09:10:10.242 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 09:10:10.252 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 09:10:10.253 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 09:10:10.253 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 09:10:10.253 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 09:10:10.254 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 09:10:10.254 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 09:10:10.254 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 09:10:10.254 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 09:10:10.255 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 09:10:10.259 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 09:10:10.263 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 09:10:10.263 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 09:10:10.264 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 09:10:10.306 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 09:10:10.306 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 09:10:10.408 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 09:10:10.409 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 09:10:10.409 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 09:10:10.410 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 09:10:10.410 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 09:10:10.471 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm]} to node -1
+2017-03-09 09:10:10.607 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 09:10:10.626 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 09:10:10.724 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 09:10:10.725 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 09:10:10.725 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 09:10:10.726 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 09:10:10.726 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 09:10:10.726 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.records-per-batch
+2017-03-09 09:10:10.727 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.bytes
+2017-03-09 09:10:10.727 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.compression-rate
+2017-03-09 09:10:10.727 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.record-retries
+2017-03-09 09:10:10.727 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.record-errors
+2017-03-09 11:05:24.442 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 11:05:24.514 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 11:05:24.528 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 11:05:24.534 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 11:05:24.538 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 11:05:24.571 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 11:05:24.572 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 11:05:24.572 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 11:05:24.573 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 11:05:24.575 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 11:05:24.576 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 11:05:24.576 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 11:05:24.584 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 11:05:24.585 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 11:05:24.585 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 11:05:24.585 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 11:05:24.586 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 11:05:24.586 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 11:05:24.586 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 11:05:24.587 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 11:05:24.587 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 11:05:24.590 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 11:05:24.593 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 11:05:24.593 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 11:05:24.594 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 11:05:24.638 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 11:05:24.638 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 11:05:24.692 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 11:05:24.693 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 11:05:24.693 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 11:05:24.693 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 11:05:24.693 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 11:05:24.796 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm]} to node -1
+2017-03-09 11:05:24.878 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 11:05:24.893 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 11:05:24.941 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 11:05:24.941 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 11:05:24.942 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 11:05:24.942 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 11:05:24.942 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 11:05:24.942 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.records-per-batch
+2017-03-09 11:05:24.943 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.bytes
+2017-03-09 11:05:24.943 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.compression-rate
+2017-03-09 11:05:24.943 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.record-retries
+2017-03-09 11:05:24.943 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm.record-errors
+2017-03-09 11:08:16.841 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 11:08:16.914 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 11:08:16.927 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 11:08:16.932 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 11:08:16.937 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 11:08:16.965 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 11:08:16.966 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 11:08:16.966 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 11:08:16.966 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 11:08:16.968 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 11:08:16.969 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 11:08:16.969 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 11:08:16.977 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 11:08:16.978 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 11:08:16.978 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 11:08:16.978 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 11:08:16.979 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 11:08:16.979 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 11:08:16.980 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 11:08:16.980 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 11:08:16.981 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 11:08:16.984 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 11:08:16.988 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 11:08:16.988 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 11:08:16.989 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 11:08:17.037 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 11:08:17.037 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 11:08:17.083 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 11:08:17.084 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 11:08:17.084 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 11:08:17.085 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 11:08:17.085 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 11:08:17.193 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[wsk-topic]} to node -1
+2017-03-09 11:08:17.273 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = wsk-topic, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 11:08:17.291 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 11:08:17.340 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 11:08:17.341 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 11:08:17.341 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 11:08:17.342 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 11:08:17.342 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 11:08:17.342 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.wsk-topic.records-per-batch
+2017-03-09 11:08:17.342 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.wsk-topic.bytes
+2017-03-09 11:08:17.342 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.wsk-topic.compression-rate
+2017-03-09 11:08:17.343 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.wsk-topic.record-retries
+2017-03-09 11:08:17.343 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.wsk-topic.record-errors
+2017-03-09 12:23:24.839 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 12:23:24.897 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 12:23:24.913 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 12:23:24.924 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 12:23:24.927 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 12:23:24.953 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 12:23:24.953 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 12:23:24.953 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 12:23:24.953 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 12:23:24.955 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 12:23:24.955 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 12:23:24.956 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 12:23:24.962 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 12:23:24.962 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 12:23:24.963 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 12:23:24.963 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 12:23:24.963 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 12:23:24.963 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 12:23:24.964 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 12:23:24.964 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 12:23:24.964 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 12:23:24.966 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 12:23:24.971 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 12:23:24.971 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 12:23:24.972 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 12:23:25.027 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 12:23:25.027 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 12:23:25.075 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 12:23:25.076 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 12:23:25.076 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 12:23:25.077 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 12:23:25.077 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 12:23:25.167 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 12:23:25.285 [kafka-producer-network-thread | producer-1] WARN  org.apache.kafka.clients.NetworkClient - Error while fetching metadata with correlation id 0 : {testStorm1=LEADER_NOT_AVAILABLE}
+2017-03-09 12:23:25.285 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [])
+2017-03-09 12:23:25.358 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node 0 for sending metadata request
+2017-03-09 12:23:25.358 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 12:23:25.407 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 12:23:25.408 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 12:23:25.408 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 12:23:25.409 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 12:23:25.409 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 12:23:25.458 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node 0
+2017-03-09 12:23:25.518 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 3 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 12:23:25.533 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 12:23:25.534 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 12:23:25.534 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 12:23:25.535 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 12:23:25.535 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 12:24:41.338 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 12:24:41.392 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 12:24:41.405 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 12:24:41.417 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 12:24:41.419 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 12:24:41.445 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 12:24:41.445 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 12:24:41.446 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 12:24:41.446 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 12:24:41.448 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 12:24:41.448 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 12:24:41.449 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 12:24:41.456 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 12:24:41.457 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 12:24:41.457 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 12:24:41.458 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 12:24:41.459 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 12:24:41.459 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 12:24:41.459 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 12:24:41.459 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 12:24:41.461 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 12:24:41.464 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 12:24:41.468 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 12:24:41.468 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 12:24:41.469 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 12:24:41.519 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 12:24:41.519 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 12:24:41.562 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 12:24:41.563 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 12:24:41.563 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 12:24:41.563 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 12:24:41.563 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 12:24:41.658 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 12:24:41.726 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 12:24:41.740 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 12:24:41.782 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 12:24:41.782 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 12:24:41.782 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 12:24:41.783 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 12:24:41.783 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 12:24:41.783 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 12:24:41.783 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 12:24:41.784 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 12:24:41.784 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 12:24:41.784 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 12:25:49.687 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 12:25:49.747 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 12:25:49.762 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 12:25:49.773 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 12:25:49.777 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 12:25:49.802 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 12:25:49.803 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 12:25:49.803 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 12:25:49.803 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 12:25:49.805 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 12:25:49.805 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 12:25:49.806 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 12:25:49.813 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 12:25:49.814 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 12:25:49.814 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 12:25:49.815 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 12:25:49.815 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 12:25:49.816 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 12:25:49.816 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 12:25:49.816 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 12:25:49.817 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 12:25:49.820 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 12:25:49.825 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 12:25:49.826 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 12:25:49.827 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 12:25:49.877 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 12:25:49.877 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 12:25:49.923 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 12:25:49.924 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 12:25:49.925 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 12:25:49.925 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 12:25:49.925 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 12:25:50.021 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 12:25:50.090 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 12:25:50.105 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 12:25:50.146 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 12:25:50.147 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 12:25:50.147 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 12:25:50.148 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 12:25:50.148 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 12:25:50.148 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 12:25:50.148 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 12:25:50.148 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 12:25:50.149 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 12:25:50.149 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 15:27:32.781 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:27:32.852 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:27:32.866 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 15:27:32.879 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 15:27:32.881 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 15:27:32.910 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 15:27:32.911 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 15:27:32.911 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 15:27:32.911 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 15:27:32.914 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 15:27:32.915 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 15:27:32.915 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 15:27:32.923 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 15:27:32.924 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 15:27:32.924 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 15:27:32.925 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 15:27:32.925 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 15:27:32.925 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 15:27:32.925 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 15:27:32.926 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 15:27:32.926 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 15:27:32.931 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 15:27:32.935 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 15:27:32.935 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 15:27:32.936 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 15:27:32.981 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 15:27:32.981 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 15:27:33.025 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 15:27:33.026 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 15:27:33.026 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 15:27:33.026 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 15:27:33.027 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 15:27:33.126 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 15:27:33.200 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 15:27:33.216 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 15:27:33.263 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 15:27:33.263 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 15:27:33.264 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 15:27:33.264 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 15:27:33.264 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 15:27:33.264 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 15:27:33.265 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 15:27:33.265 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 15:27:33.265 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 15:27:33.265 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 15:28:47.798 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:28:47.875 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:28:47.890 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 15:28:47.897 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 15:28:47.900 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 15:28:47.928 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 15:28:47.929 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 15:28:47.929 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 15:28:47.929 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 15:28:47.931 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 15:28:47.931 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 15:28:47.932 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 15:28:47.939 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 15:28:47.939 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 15:28:47.939 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 15:28:47.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 15:28:47.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 15:28:47.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 15:28:47.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 15:28:47.941 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 15:28:47.941 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 15:28:47.944 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 15:28:47.948 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 15:28:47.948 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 15:28:47.949 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 15:28:48.050 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 15:28:48.050 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 15:28:48.091 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 15:28:48.092 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 15:28:48.092 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 15:28:48.093 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 15:28:48.093 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 15:28:48.197 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 15:28:48.271 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 15:28:48.287 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 15:28:48.331 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 15:28:48.332 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 15:28:48.332 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 15:28:48.332 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 15:28:48.333 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 15:28:48.333 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 15:28:48.333 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 15:28:48.333 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 15:28:48.333 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 15:28:48.334 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 15:29:19.790 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:29:19.868 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:29:19.885 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 15:29:19.892 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 15:29:19.895 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 15:29:19.925 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 15:29:19.926 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 15:29:19.926 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 15:29:19.927 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 15:29:19.929 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 15:29:19.929 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 15:29:19.930 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 15:29:19.939 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 15:29:19.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 15:29:19.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 15:29:19.940 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 15:29:19.941 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 15:29:19.941 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 15:29:19.941 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 15:29:19.942 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 15:29:19.942 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 15:29:19.945 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 15:29:19.949 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 15:29:19.950 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 15:29:19.951 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 15:29:20.063 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 15:29:20.064 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 15:29:20.111 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 15:29:20.111 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 15:29:20.111 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 15:29:20.112 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 15:29:20.112 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 15:29:20.215 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 15:29:20.296 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 15:29:20.312 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 15:29:20.362 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 15:29:20.363 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 15:29:20.363 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 15:29:20.364 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 15:29:20.364 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 15:29:20.364 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 15:29:20.365 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 15:29:20.365 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 15:29:20.365 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 15:29:20.366 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 15:34:29.623 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:34:29.701 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:34:29.717 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 15:34:29.724 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 15:34:29.727 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 15:34:29.759 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 15:34:29.759 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 15:34:29.760 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 15:34:29.760 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 15:34:29.762 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 15:34:29.762 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 15:34:29.763 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 15:34:29.770 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 15:34:29.771 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 15:34:29.771 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 15:34:29.772 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 15:34:29.772 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 15:34:29.773 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 15:34:29.773 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 15:34:29.773 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 15:34:29.773 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 15:34:29.777 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 15:34:29.782 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 15:34:29.782 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 15:34:29.782 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 15:34:29.889 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 15:34:29.889 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 15:34:29.930 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 15:34:29.931 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 15:34:29.931 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 15:34:29.931 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 15:34:29.932 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 15:34:30.037 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 15:34:30.111 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 15:34:30.127 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 15:34:30.170 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 15:34:30.170 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 15:34:30.170 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 15:34:30.171 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 15:34:30.171 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 15:34:30.171 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 15:34:30.172 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 15:34:30.172 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 15:34:30.172 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 15:34:30.172 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 15:43:18.960 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:43:19.049 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 15:43:19.066 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 15:43:19.074 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 15:43:19.078 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 15:43:19.111 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 15:43:19.111 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 15:43:19.112 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 15:43:19.112 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 15:43:19.114 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 15:43:19.115 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 15:43:19.115 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 15:43:19.126 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 15:43:19.126 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 15:43:19.127 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 15:43:19.127 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 15:43:19.127 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 15:43:19.128 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 15:43:19.128 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 15:43:19.128 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 15:43:19.129 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 15:43:19.132 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 15:43:19.136 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 15:43:19.137 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 15:43:19.138 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 15:43:19.252 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 15:43:19.252 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 15:43:19.360 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 15:43:19.360 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 15:43:19.361 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 15:43:19.361 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 15:43:19.361 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 15:43:19.400 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 15:43:19.551 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 15:43:19.568 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 15:43:19.683 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 15:43:19.683 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 15:43:19.683 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 15:43:19.684 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 15:43:19.684 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 15:43:19.684 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 15:43:19.685 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 15:43:19.685 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 15:43:19.685 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 15:43:19.685 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 16:21:32.756 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 16:21:32.827 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 16:21:32.844 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 16:21:32.852 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 16:21:32.855 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 16:21:32.886 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 16:21:32.886 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 16:21:32.887 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 16:21:32.887 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 16:21:32.889 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 16:21:32.889 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 16:21:32.890 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 16:21:32.897 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 16:21:32.897 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 16:21:32.898 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 16:21:32.898 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 16:21:32.898 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 16:21:32.899 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 16:21:32.899 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 16:21:32.899 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 16:21:32.900 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 16:21:32.902 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 16:21:32.906 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 16:21:32.906 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 16:21:32.907 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 16:21:33.027 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 16:21:33.028 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 16:21:33.069 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 16:21:33.070 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 16:21:33.070 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 16:21:33.071 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 16:21:33.071 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 16:21:33.171 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm1]} to node -1
+2017-03-09 16:21:33.244 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm1, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 16:21:33.261 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 16:21:33.302 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 16:21:33.303 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 16:21:33.303 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 16:21:33.304 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 16:21:33.304 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 16:21:33.304 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.records-per-batch
+2017-03-09 16:21:33.304 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.bytes
+2017-03-09 16:21:33.305 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.compression-rate
+2017-03-09 16:21:33.305 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-retries
+2017-03-09 16:21:33.305 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm1.record-errors
+2017-03-09 16:31:34.981 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 16:31:35.051 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 16:31:35.064 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 16:31:35.072 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 16:31:35.075 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 16:31:35.109 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 16:31:35.109 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 16:31:35.109 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 16:31:35.109 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 16:31:35.111 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 16:31:35.111 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 16:31:35.112 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 16:31:35.119 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 16:31:35.120 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 16:31:35.120 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 16:31:35.120 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 16:31:35.121 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 16:31:35.121 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 16:31:35.121 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 16:31:35.122 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 16:31:35.122 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 16:31:35.125 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 16:31:35.129 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 16:31:35.129 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 16:31:35.130 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 16:31:35.234 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 16:31:35.234 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 16:31:35.275 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 16:31:35.276 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 16:31:35.277 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 16:31:35.277 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 16:31:35.277 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 16:31:35.379 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm2]} to node -1
+2017-03-09 16:31:35.477 [kafka-producer-network-thread | producer-1] WARN  org.apache.kafka.clients.NetworkClient - Error while fetching metadata with correlation id 0 : {testStorm2=LEADER_NOT_AVAILABLE}
+2017-03-09 16:31:35.477 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [])
+2017-03-09 16:31:35.549 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node 0 for sending metadata request
+2017-03-09 16:31:35.549 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 16:31:35.588 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 16:31:35.589 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 16:31:35.589 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 16:31:35.589 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 16:31:35.589 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 16:31:35.650 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm2]} to node 0
+2017-03-09 16:31:35.693 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 3 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm2, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 16:31:35.711 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.records-per-batch
+2017-03-09 16:31:35.711 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.bytes
+2017-03-09 16:31:35.712 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.compression-rate
+2017-03-09 16:31:35.712 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-retries
+2017-03-09 16:31:35.712 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-errors
+2017-03-09 16:32:32.264 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 16:32:32.334 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 16:32:32.347 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 16:32:32.353 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 16:32:32.356 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 16:32:32.389 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 16:32:32.390 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 16:32:32.390 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 16:32:32.390 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 16:32:32.392 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 16:32:32.393 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 16:32:32.393 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 16:32:32.404 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 16:32:32.404 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 16:32:32.404 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 16:32:32.405 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 16:32:32.405 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 16:32:32.405 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 16:32:32.406 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 16:32:32.406 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 16:32:32.406 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 16:32:32.410 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 16:32:32.416 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 16:32:32.416 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 16:32:32.417 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 16:32:32.540 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 16:32:32.540 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 16:32:32.590 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 16:32:32.590 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 16:32:32.591 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 16:32:32.591 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 16:32:32.591 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 16:32:32.685 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm2]} to node -1
+2017-03-09 16:32:32.768 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm2, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 16:32:32.788 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 16:32:32.835 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 16:32:32.836 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 16:32:32.836 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 16:32:32.837 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 16:32:32.837 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 16:32:32.837 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.records-per-batch
+2017-03-09 16:32:32.838 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.bytes
+2017-03-09 16:32:32.838 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.compression-rate
+2017-03-09 16:32:32.838 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-retries
+2017-03-09 16:32:32.838 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-errors
+2017-03-09 18:52:11.050 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 18:52:11.129 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 18:52:11.149 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 18:52:11.157 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 18:52:11.161 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 18:52:11.195 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 18:52:11.195 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 18:52:11.196 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 18:52:11.196 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 18:52:11.198 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 18:52:11.199 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 18:52:11.199 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 18:52:11.206 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 18:52:11.207 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 18:52:11.207 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 18:52:11.208 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 18:52:11.208 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 18:52:11.208 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 18:52:11.209 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 18:52:11.209 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 18:52:11.209 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 18:52:11.212 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 18:52:11.217 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 18:52:11.217 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 18:52:11.218 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 18:52:11.365 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 18:52:11.365 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 18:52:11.409 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 18:52:11.410 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 18:52:11.411 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 18:52:11.412 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 18:52:11.412 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 18:52:11.523 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm2]} to node -1
+2017-03-09 18:52:11.603 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm2, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 18:52:11.624 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 18:52:11.664 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 18:52:11.665 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 18:52:11.665 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 18:52:11.665 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 18:52:11.666 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 18:52:11.666 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.records-per-batch
+2017-03-09 18:52:11.666 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.bytes
+2017-03-09 18:52:11.666 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.compression-rate
+2017-03-09 18:52:11.667 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-retries
+2017-03-09 18:52:11.667 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-errors
+2017-03-09 18:56:35.570 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 18:56:35.647 [main] INFO  org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [10.1.236.214:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1000000000
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2017-03-09 18:56:35.667 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bufferpool-wait-time
+2017-03-09 18:56:35.673 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name buffer-exhausted-records
+2017-03-09 18:56:35.677 [main] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 1 to Cluster(id = null, nodes = [10.1.236.214:9092 (id: -1 rack: null)], partitions = [])
+2017-03-09 18:56:35.709 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-closed:
+2017-03-09 18:56:35.710 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name connections-created:
+2017-03-09 18:56:35.711 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent-received:
+2017-03-09 18:56:35.711 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-sent:
+2017-03-09 18:56:35.714 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name bytes-received:
+2017-03-09 18:56:35.715 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name select-time:
+2017-03-09 18:56:35.715 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name io-time:
+2017-03-09 18:56:35.725 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name batch-size
+2017-03-09 18:56:35.725 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name compression-rate
+2017-03-09 18:56:35.725 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name queue-time
+2017-03-09 18:56:35.726 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name request-time
+2017-03-09 18:56:35.726 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name produce-throttle-time
+2017-03-09 18:56:35.726 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name records-per-request
+2017-03-09 18:56:35.727 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-retries
+2017-03-09 18:56:35.727 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name errors
+2017-03-09 18:56:35.727 [main] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name record-size-max
+2017-03-09 18:56:35.731 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.producer.internals.Sender - Starting Kafka producer I/O thread.
+2017-03-09 18:56:35.735 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version : 0.10.1.0
+2017-03-09 18:56:35.735 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 3402a74efb23d1d4
+2017-03-09 18:56:35.736 [main] DEBUG org.apache.kafka.clients.producer.KafkaProducer - Kafka producer started
+2017-03-09 18:56:35.850 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initialize connection to node -1 for sending metadata request
+2017-03-09 18:56:35.850 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node -1 at 10.1.236.214:9092.
+2017-03-09 18:56:35.892 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-sent
+2017-03-09 18:56:35.893 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.bytes-received
+2017-03-09 18:56:35.893 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node--1.latency
+2017-03-09 18:56:35.893 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node -1
+2017-03-09 18:56:35.894 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node -1
+2017-03-09 18:56:35.997 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Sending metadata request {topics=[testStorm2]} to node -1
+2017-03-09 18:56:36.077 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.Metadata - Updated cluster metadata version 2 to Cluster(id = 3qG01aHJRlyEfA9ePwwuRA, nodes = [10.1.236.214:9092 (id: 0 rack: null)], partitions = [Partition(topic = testStorm2, partition = 0, leader = 0, replicas = [0,], isr = [0,])])
+2017-03-09 18:56:36.099 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Initiating connection to node 0 at 10.1.236.214:9092.
+2017-03-09 18:56:36.139 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-sent
+2017-03-09 18:56:36.139 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.bytes-received
+2017-03-09 18:56:36.140 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name node-0.latency
+2017-03-09 18:56:36.140 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.network.Selector - Created socket with SO_RCVBUF = 32768, SO_SNDBUF = 131072, SO_TIMEOUT = 0 to node 0
+2017-03-09 18:56:36.140 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.clients.NetworkClient - Completed connection to node 0
+2017-03-09 18:56:36.141 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.records-per-batch
+2017-03-09 18:56:36.141 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.bytes
+2017-03-09 18:56:36.142 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.compression-rate
+2017-03-09 18:56:36.142 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-retries
+2017-03-09 18:56:36.142 [kafka-producer-network-thread | producer-1] DEBUG org.apache.kafka.common.metrics.Metrics - Added sensor with name topic.testStorm2.record-errors

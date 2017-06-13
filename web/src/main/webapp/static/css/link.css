@@ -1,0 +1,109 @@
+body{
+	font-family: "微软雅黑";
+	font-size: 14px;
+	background-color: #f7f7f7;
+}
+body *{
+	position: relative;
+}
+.wrap{
+	width: 100%;
+
+}
+.margin10{
+	margin: 10px;
+}
+.pad10{
+	padding: 10px;
+}
+.bor_rad4{
+	border-radius: 4px;
+}
+.bor_rad4_up{
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.bor0{
+	border:none;
+}
+.bor1{
+	border: 1px solid #e2e2e2;
+}
+.bor_bottom1{
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 1px;
+}
+.indent20{
+	/* text-indent: 20px; */
+	padding-left: 27px;
+}
+.hei40{
+	height: 40px;
+}
+.l-h40{
+	line-height: 40px;
+}
+.fit{
+	width: 100%;
+}
+.icon{
+	width: 22px;
+	height: 
+}
+.icon-phone{
+	background: url("../images/link.png");
+	background-position: 8px 10px;
+	background-size: 110px auto;
+}
+.icon-password{
+	background: url("../images/link.png");
+	background-position: -27px 12px;
+	background-size: 110px auto;
+}
+.abso{
+	position: absolute;
+}
+.top{top:0;}
+.left{left: 0;}
+.right{
+	right: 0;
+}
+.title{
+	text-align: center;
+	font-size: 19px;
+	background-color: #3baeda;
+	color: white;
+}
+input:focus{
+	outline: none;
+}
+.getpsw{
+	border-radius: 4px;
+	height: 30px;
+	color: white;
+	background-color: #3baeda;
+	margin: 5px;
+	border: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.msg{
+	color: #ff7300;
+	font-size: 12px;
+}
+.submit_btn{
+	width: 100%;
+	border-radius: 4px;
+	height: 40px;
+	color: white;
+	background-color: #ff8800;
+	/* margin: 5px; */
+	border: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.getpsw.disable{
+	background-color: #b4b4b4;
+}

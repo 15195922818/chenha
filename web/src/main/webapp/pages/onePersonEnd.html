@@ -1,0 +1,397 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
+<meta name="x5-orientation" content="portrait"/>
+<title>尾页</title>
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+<script src="../static/js/jquery-1.8.3.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style type="text/css">
+  html,body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display:block;
+}
+   
+    .bg{
+     background: url("../static/images/onePersonEnd/bg.png") no-repeat;
+     background-size: 100% 100%;
+     width: 100%;
+     height: 100%;
+     max-width:420px;
+     position: fixed;    
+    }
+     .top{
+       position:absolute;
+       background: black;
+       width: 100%;
+       height:36px;;
+    }
+    
+    .picture{
+	    position: relative;
+		width: 26%;
+		height: 30%;
+		top: 10%;
+		left: 37%;
+    }
+    .chose{
+      position: absolute;  
+      width:100%;
+    /*   height:20%; */
+      bottom:20%;
+      font-size:15px;
+      text-align:center;
+       
+     }
+    .chose1{
+      background: url("../static/images/onePersonEnd/button.png") no-repeat;
+      background-size: 100% 100%;    
+      width:80%;
+      height:36px;
+      left: 10%;
+      position:absolute;    
+      line-height:36px;
+      color:white;
+    /*   margin-top:10px; */
+    }
+     .chose2{
+      background: url("../static/images/onePersonEnd/button-1.png") no-repeat;
+      background-size: 100% 100%;
+      width:43%;
+      height:36px;
+      margin-left: 4.66666%;
+      margin-top:10px;
+      position:absolute; 
+      right:4.66666%;
+      line-height:36px;
+      color:white;
+    }
+   
+    .end{
+     position: absolute;  
+      width:100%;
+      height:5%;
+      bottom:5%;
+      text-align:center;    
+      color:yellow;
+    }
+     .left{
+       position:relative;
+       width:70px;;
+       height:50%;
+       z-index: 3;
+       display:none;
+    }
+    .back{
+      margin-left:10px;
+      position:absolute;
+       width: 15px;
+      height: 25px;
+    }
+    .character{
+      position:absolute;
+      float:left;
+      width:40px;;
+      height:25px;
+      line-height:25px;
+      color:white;
+      font-size:18px;
+      margin-left:30px;
+    }
+    .right{
+       position:absolute;
+       top:0px;
+       width:100%;
+       height:100%;
+       color:white;
+       font-size:25px;
+       text-align:center;
+    }
+    .center{
+      background: url("../static/images/onePersonEnd/rectangle-1.png") no-repeat;
+      background-size: 100% 100%;    
+      width:100%;
+      height:70%;
+      position:absolute;
+      top:36px;
+    }
+    .custName{
+      position:relative;
+      top:13%;
+      width:100%;
+      height:8%;       
+      color:white;
+      text-align:center;
+      font-size:18px;
+    }
+    .dengji{
+      position:relative;
+      top:13%;
+      width:100%;
+      height:8%;     
+      font-size:12px;
+    }
+    .levelName{
+     position:absolute;
+      left:30%;
+      width:40%;
+      height:100%;
+      color:white;
+    }
+    .level1{
+      position:absolute;
+      width:40%;
+      height:100%;
+      color:white;
+      text-align:right;
+    }
+    .levelDescription{
+    position:absolute;
+       right:0px;
+       width:60%;
+      color:rgb(0, 178, 255);
+      text-align:left;
+    }
+    .details{
+      background: url("../static/game/details.png") no-repeat;
+      background-size: 100% 100%;
+      position:absolute;
+      bottom:0px;
+      left:10%;
+      width:80%;
+      height:50%;     
+      font-size:12px;
+    }
+    .details1{
+      position: absolute;
+      left: 5%;
+      width: 26.6666%;
+      height: 100%;
+    }
+     .details2{
+      position: absolute;
+      left: 36.6666%;
+      width: 26.6666%;
+      height: 100%;
+    }
+     .details3{
+      position: absolute;
+      right: 5%;
+      width: 26.6666%;
+      height: 100%;
+    }
+    .detailsName{
+      position: absolute;
+  width: 60%;
+  height: 12%;
+  color: rgb(16, 15, 15);
+  text-align: right;
+  font-size: 18px;
+    }
+    .detailsContent{
+       position: absolute;
+  left: 62%;
+  width: 30%;
+  color: red;
+  text-align: left;
+  font-size: 20px;
+  font-family: cursive;
+    }
+    .someInfo{
+       position:reltive;
+       margin-top:12%;
+       height:12%;
+    }
+    .jiantou{
+       position:absolute;
+       top:0px;
+       right:0px;
+        width:100px;
+       height:100px; 
+     
+    }
+    .zi{
+      position:absolute;
+      top:100px;
+       width:150px;
+       height:100px; 
+       right:0px;
+       
+    }
+    .tishi{
+       position:absolute;
+      top:0px;
+       width:100%;
+       height:100%;
+       right:0px;
+       z-index:100;
+       background-color:black;
+       opacity:0.3;
+    }
+</style>
+<script th:inline="javascript">
+/*<![CDATA[*/
+   var answerCorrect=[[${answerCorrect}]];
+	var maxScore=[[${maxScore}]];
+	var gameScore=[[${gameScore}]];
+	var nickName=[[${nickName}]];
+	var levelName=[[${levelName}]];
+   $(function(){
+	        var headPicture=[[${headPicture}]];
+	        $("#picture").attr("src",headPicture);
+	    	$(".picture").height($(".picture").width());
+	    	
+	      
+	    	 var width=$(".bg").width();
+	    	  if(width>400){    		 
+	    		$(".levelName").css("font-size","15px"); 
+	    		$(".details").css("font-size","15px");
+	    	 } 
+	  
+	   
+	   $("#answerCorrect").text(answerCorrect);
+	   $("#maxScore").text(maxScore);
+	   $("#gameScore").text(gameScore);
+	   $("#nickName").text(nickName);
+	   $("#levelName").text(levelName);
+	   
+	   
+	   
+	   $(".zi").width(0.37*$(".bg").width());
+   });
+   function dispear(){
+	   $(".tishi").hide();
+   }
+/*  ]]> */
+</script>
+<script th:inline="javascript">
+/* <![CDATA[ */
+    wx.config({
+	    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	    appId: [[${appId}]], // 必填，公众号的唯一标识
+	    timestamp:[[${timestamp}]] , // 必填，生成签名的时间戳
+	    nonceStr: [[${noncestr}]], // 必填，生成签名的随机串
+	    signature: [[${signature}]],// 必填，签名，见附录1
+	    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+    wx.ready(function(){
+		wx.onMenuShareAppMessage({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中获得'+gameScore+'分，不服你就来挑战。', // 分享描述
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth', // 分享链接
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+		wx.onMenuShareTimeline({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中获得'+gameScore+'分，不服你就来挑战。', // 分享链接
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth',
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+	    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+	});
+    wx.error(function(res){
+    	console.info("error");
+    	// config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+	});
+	$("#morePerson").click(function(){
+		alert("2");  	
+	})
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+     function getBase() {
+    		var curWwwPath = window.document.location.href;
+    		var pathName = window.document.location.pathname;
+    		var pos = curWwwPath.indexOf(pathName);
+    		var localhostPaht = curWwwPath.substring(0, pos);
+    		var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+    		return (localhostPaht + projectName);
+    	};
+    	 function backToPast(){
+    		
+    		 var url=getBase()+"/new/homePage";
+    		 window.location.href=url; 
+    	 }
+    
+      function lookRanking(){
+    	  var url=getBase()+"/new/getThisWeekList";
+    	  window.location.href=url; 
+      }	 
+</script>
+</head>
+
+<body>
+<div class="tishi" onclick="dispear();">
+    <div class="jiantou">
+       <img style="width:100%;height:100%;" src="../static/game/jiantou.png"/>
+    </div>
+     <div class="zi">
+       <img style="width:100%;height:100%;" src="../static/game/zi.png"/>
+     </div>
+ </div>   
+   <div class="bg">
+    <div class="top">
+       <div class="left" onclick="backToPast();">
+       <div class="back">
+        <img style="width:100%;height:100%;" src="../static/images/choseModel/tu-4.png"/>
+       </div>
+       <div class="character">返回</div>
+       </div>
+        <div class="right">安全无忧</div>
+    </div>
+    <div class="center">
+     <div class="picture">
+        <img id="picture" style="width:100%;height:100%;" src="../static/images/onePersonEnd/tu.png"/>
+     </div>
+       <div class="custName" id="nickName">13123124@qq.com</div>
+        <div class="dengji">
+        <span class="levelName"><span class="level1">等级:</span><span id="levelName" class="levelDescription">&nbsp;安全新手</span></span>    
+      </div>
+      <div class="details">
+         <!-- <span class="details1"><span class="detailsName">答对题数:</span><span id="answerCorrect" class="detailsContent">&nbsp;7</span></span>
+         <span class="details2"><span class="detailsName">获得积分:</span><span id="gameScore" class="detailsContent">&nbsp;67</span></span> 
+         <span class="details3"><span class="detailsName">最高积分:</span><span id="maxScore" class="detailsContent">&nbsp;123</span></span> -->
+         <div class="someInfo">
+            <div><span class="detailsName">答对题数:</span><span id="answerCorrect" class="detailsContent">&nbsp;7</span></div>
+         </div>
+         <div class="someInfo">
+            <div><span class="detailsName">获得积分:</span><span id="gameScore" class="detailsContent">&nbsp;67</span></div>
+         </div>
+         <div class="someInfo">
+            <div><span class="detailsName">最高积分:</span><span id="maxScore" class="detailsContent">&nbsp;123</span></div>
+         </div>
+      </div>
+     </div>
+     <div class="chose">
+     <div class="chose1" id="onePerson" onclick="backToPast()">再玩一次</div>
+    
+      
+     </div>
+    <div class="end"><a onclick="lookRanking()">查看积分排名</a></div>
+   </div>
+   <input id="baseUrl" th:value="@{/}" style="display:none"/>
+</body>
+</html>

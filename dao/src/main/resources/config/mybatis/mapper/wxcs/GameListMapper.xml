@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.web.mapper.GameListMapper" >
+  <resultMap id="BaseResultMap" type="com.ai.web.entity.GameList" >
+    <id column="game_id" property="gameId" jdbcType="VARCHAR" />
+    <result column="person_id" property="personId" jdbcType="VARCHAR" />
+    <result column="jifen" property="jifen" jdbcType="VARCHAR" />
+    <result column="game_time" property="gameTime" jdbcType="VARCHAR" />
+    <result column="game_week" property="gameWeek" jdbcType="VARCHAR" />
+    <result column="is_week_max" property="isWeekMax" jdbcType="VARCHAR" />
+    <result column="extend_field1" property="extendField1" jdbcType="VARCHAR" />
+    <result column="extend_field2" property="extendField2" jdbcType="VARCHAR" />
+    <result column="extend_field3" property="extendField3" jdbcType="VARCHAR" />
+    <result column="ranking" property="ranking" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="head_picture" property="headPicture" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    game_id, person_id, jifen, game_time, game_week, is_week_max, extend_field1, extend_field2, 
+    extend_field3
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ai.core.util.dao.Criteria" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from game_list
+    <if test="_parameter != null" >
+      <include refid="common.Example_Where_Clause" />
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from game_list
+    where game_id = #{gameId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from game_list
+    where game_id = #{gameId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ai.core.util.dao.Criteria" >
+    delete from game_list
+    <if test="_parameter != null" >
+      <include refid="common.Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ai.web.entity.GameList" >
+    insert into game_list (game_id, person_id, jifen, 
+      game_time, game_week, is_week_max, 
+      extend_field1, extend_field2, extend_field3
+      )
+    values (#{gameId,jdbcType=VARCHAR}, #{personId,jdbcType=VARCHAR}, #{jifen,jdbcType=VARCHAR}, 
+      #{gameTime,jdbcType=VARCHAR}, #{gameWeek,jdbcType=VARCHAR}, #{isWeekMax,jdbcType=VARCHAR}, 
+      #{extendField1,jdbcType=VARCHAR}, #{extendField2,jdbcType=VARCHAR}, #{extendField3,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ai.web.entity.GameList" >
+    insert into game_list
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gameId != null" >
+        game_id,
+      </if>
+      <if test="personId != null" >
+        person_id,
+      </if>
+      <if test="jifen != null" >
+        jifen,
+      </if>
+      <if test="gameTime != null" >
+        game_time,
+      </if>
+      <if test="gameWeek != null" >
+        game_week,
+      </if>
+      <if test="isWeekMax != null" >
+        is_week_max,
+      </if>
+      <if test="extendField1 != null" >
+        extend_field1,
+      </if>
+      <if test="extendField2 != null" >
+        extend_field2,
+      </if>
+      <if test="extendField3 != null" >
+        extend_field3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gameId != null" >
+        #{gameId,jdbcType=VARCHAR},
+      </if>
+      <if test="personId != null" >
+        #{personId,jdbcType=VARCHAR},
+      </if>
+      <if test="jifen != null" >
+        #{jifen,jdbcType=VARCHAR},
+      </if>
+      <if test="gameTime != null" >
+        #{gameTime,jdbcType=VARCHAR},
+      </if>
+      <if test="gameWeek != null" >
+        #{gameWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="isWeekMax != null" >
+        #{isWeekMax,jdbcType=VARCHAR},
+      </if>
+      <if test="extendField1 != null" >
+        #{extendField1,jdbcType=VARCHAR},
+      </if>
+      <if test="extendField2 != null" >
+        #{extendField2,jdbcType=VARCHAR},
+      </if>
+      <if test="extendField3 != null" >
+        #{extendField3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ai.core.util.dao.Criteria" resultType="java.lang.Integer" >
+    select count(*) from game_list
+    <if test="_parameter != null" >
+      <include refid="common.Example_Where_Clause" />
+    </if>
+  </select>
+  <select id="getThisWeekScore" resultMap="BaseResultMap">
+     
+		SELECT
+			@rownum :=@rownum + 1 AS ranking,
+			YEARWEEK(now(),1) as yearWeek,
+			b.*
+		FROM
+			(
+				SELECT
+					a.person_id,
+					u.nick_name,
+					u.head_picture,
+					max(a.jifen + 0) AS jifen
+				FROM
+					(
+						SELECT
+							*
+						FROM
+							game_list
+						WHERE
+							YEARWEEK(
+								date_format(game_time, '%Y-%m-%d'),1
+							) = YEARWEEK(now(),1)
+							  and extend_field1='1'
+					) a
+				INNER JOIN USER u ON a.person_id = u.person_id
+				GROUP BY
+					person_id
+				ORDER BY
+					jifen DESC,DATE_FORMAT(game_time,"%Y-%c-%d %h:%i:%s")
+			) b,
+			(SELECT @rownum := 0) it
+	</select> 
+	<select id="getPreviousWeekScore" resultMap="BaseResultMap">
+     
+		SELECT
+			@rownum :=@rownum + 1 AS ranking,
+			YEARWEEK(now(),1) as yearWeek,
+			b.*
+		FROM
+			(
+				SELECT
+					a.person_id,
+					u.nick_name,
+					u.head_picture,
+					max(a.jifen + 0) AS jifen
+				FROM
+					(
+						SELECT
+							*
+						FROM
+							game_list
+						WHERE
+							YEARWEEK(
+								date_format(game_time, '%Y-%m-%d'),1
+							) = YEARWEEK(date_sub(now(),interval 7 day),1)
+							  and extend_field1='1'
+					) a
+				INNER JOIN USER u ON a.person_id = u.person_id
+				GROUP BY
+					person_id
+				ORDER BY
+					jifen DESC,DATE_FORMAT(game_time,"%Y-%c-%d %h:%i:%s")
+			) b,
+			(SELECT @rownum := 0) it
+	</select> 
+  <update id="updateByExampleSelective" parameterType="map" >
+    update game_list
+    <set >
+      <if test="record.gameId != null" >
+        game_id = #{record.gameId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.personId != null" >
+        person_id = #{record.personId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jifen != null" >
+        jifen = #{record.jifen,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gameTime != null" >
+        game_time = #{record.gameTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gameWeek != null" >
+        game_week = #{record.gameWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isWeekMax != null" >
+        is_week_max = #{record.isWeekMax,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extendField1 != null" >
+        extend_field1 = #{record.extendField1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extendField2 != null" >
+        extend_field2 = #{record.extendField2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extendField3 != null" >
+        extend_field3 = #{record.extendField3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="common.Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update game_list
+    set game_id = #{record.gameId,jdbcType=VARCHAR},
+      person_id = #{record.personId,jdbcType=VARCHAR},
+      jifen = #{record.jifen,jdbcType=VARCHAR},
+      game_time = #{record.gameTime,jdbcType=VARCHAR},
+      game_week = #{record.gameWeek,jdbcType=VARCHAR},
+      is_week_max = #{record.isWeekMax,jdbcType=VARCHAR},
+      extend_field1 = #{record.extendField1,jdbcType=VARCHAR},
+      extend_field2 = #{record.extendField2,jdbcType=VARCHAR},
+      extend_field3 = #{record.extendField3,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="common.Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ai.web.entity.GameList" >
+    update game_list
+    <set >
+      <if test="personId != null" >
+        person_id = #{personId,jdbcType=VARCHAR},
+      </if>
+      <if test="jifen != null" >
+        jifen = #{jifen,jdbcType=VARCHAR},
+      </if>
+      <if test="gameTime != null" >
+        game_time = #{gameTime,jdbcType=VARCHAR},
+      </if>
+      <if test="gameWeek != null" >
+        game_week = #{gameWeek,jdbcType=VARCHAR},
+      </if>
+      <if test="isWeekMax != null" >
+        is_week_max = #{isWeekMax,jdbcType=VARCHAR},
+      </if>
+      <if test="extendField1 != null" >
+        extend_field1 = #{extendField1,jdbcType=VARCHAR},
+      </if>
+      <if test="extendField2 != null" >
+        extend_field2 = #{extendField2,jdbcType=VARCHAR},
+      </if>
+      <if test="extendField3 != null" >
+        extend_field3 = #{extendField3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where game_id = #{gameId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ai.web.entity.GameList" >
+    update game_list
+    set person_id = #{personId,jdbcType=VARCHAR},
+      jifen = #{jifen,jdbcType=VARCHAR},
+      game_time = #{gameTime,jdbcType=VARCHAR},
+      game_week = #{gameWeek,jdbcType=VARCHAR},
+      is_week_max = #{isWeekMax,jdbcType=VARCHAR},
+      extend_field1 = #{extendField1,jdbcType=VARCHAR},
+      extend_field2 = #{extendField2,jdbcType=VARCHAR},
+      extend_field3 = #{extendField3,jdbcType=VARCHAR}
+    where game_id = #{gameId,jdbcType=VARCHAR}
+  </update>
+</mapper>

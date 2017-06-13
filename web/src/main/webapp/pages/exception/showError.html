@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>系统异常</title>
+</head>
+<body>
+	<div
+		style="width: 450px;height: 250px;margin-right: auto;margin-left: auto;margin-top: 50px;border:2px solid red;">
+		<div>
+			<img th:src="@{/static/images/error.jpg}"
+				style="width: 40px;height: 40px"> </img>
+		</div>
+		<div style="text-align: center;font-size: 20px;font-style:inherit;"
+			th:text="${exception.exceptionMessage}"></div>
+		<div
+			style="text-align: left; padding-left: 40px;margin-top: 20px;margin-right: 40px">
+			<table>
+				<tr>
+					<td style="width: 80px"><span style="font-size: 15px">异常编码：</span></td>
+					<td><span style="font-size: 15px"
+						th:text="${exception.exceptionCode}"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 80px"><span style="font-size: 15px">异常原因：</span></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span></span></td>
+					<td><span style="font-size: 15px"
+						th:text="${exception.exceptionCause}"></span></td>
+				</tr>
+				<tr>
+					<td><span></span></td>
+					<td><a href="javascript:history.go(-1);">返回>></a></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+</body>
+</html>

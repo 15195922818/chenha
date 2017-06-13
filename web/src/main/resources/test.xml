@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-body>
+	<test>
+		<a>123</a>
+	</test>
+	<test1>
+		<b>456</b>
+	</test1>
+</xml-body>

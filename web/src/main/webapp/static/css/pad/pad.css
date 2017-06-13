@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "微软雅黑";
+}
+body,
+html {
+  overflow: hidden;
+  height: 100%;
+}
+.main_body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.wrap_box {
+  position: relative;
+  margin: auto;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 20px #888;
+  -moz-box-shadow: 0px 0px 20px #888;
+  box-shadow: 0px 0px 20px #888;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color=#000000)";
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+.wrap_box .pic_wrap {
+  position: relative;
+  margin: 0px auto;
+}
+.wrap_box img {
+  margin: 0 auto;
+  width: auto;
+  height: 60%;
+  display: block;
+  position: relative;
+}
+.wrap_box > h1 {
+  text-indent: 35px;
+  line-height: 200%;
+  font-weight: normal;
+  color: #947600;
+  font-size: 35px;
+}
+.wrap_box .pic_title {
+  color: #999999;
+  font-size: 24px;
+  height: 50px;
+  border-bottom: 1px solid #dadada;
+}
+.wrap_box .pic_title p {
+  margin: auto 35px;
+}
+.wrap_box .pic_comment {
+  position: relative;
+}
+.wrap_box .pic_comment .pic_up {
+  text-align: center;
+  height: 0;
+  float: left;
+  width: 100px;
+  border-right: 1px solid #dadada;
+  background: #f8f8f8;
+  color: #947600;
+}
+.wrap_box .pic_comment .pic_up h1 {
+  line-height: 160%;
+  font-size: 32px;
+}
+.wrap_box .pic_comment .pic_up p {
+  font-size: 16px;
+}
+.pic_com_detail {
+  position: relative;
+  height: 0;
+  width: 70%;
+  float: left;
+  overflow: hidden;
+}
+.pic_comment .pic_com_detail .block_left {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(rgba(255, 255, 255, 0)));
+  background: -moz-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+}
+.pic_comment .pic_com_detail .block_right {
+  height: 100%;
+  width: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0)), to(#ffffff));
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0), #ffffff);
+}
+ .comment_wrap {
+  width: 2000px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+}
+.comment_wrap li {
+  position: relative;
+  width: auto;
+  margin-left: 0;
+  min-width: 50px;
+  float:left;
+}
+.comment_wrap li span {
+  position: absolute;
+  bottom: 0px;
+  right: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.comment_wrap li.current p {
+ /*  color: #000; */
+}
+.comment_wrap li.current span {
+  /* color: #000; */
+}
+ .pic_comment .pic_com_detail ul, .pic_comment .pic_com_detail li {
+  list-style: none;
+}
+.pic_comment .pic_com_detail li,
+.pic_comment .pic_com_detail p {
+  text-align: right;
+  padding: 0 30px;
+  color: #999999;
+  font-size: 24px;
+  float: left;
+}
+.pic_comment .pic_com_detail p {
+  float: right;
+}
+.main_body>ul,.main_body>ul>li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.main_body>ul>li{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #000000;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out 0.1s;
+  -moz-transition: all 0.5s ease-in-out 0.1s;
+  -ms-transition: all 0.5s ease-in-out 0.1s;
+  -o-transition: all 0.5s ease-in-out 0.1s;
+  transition: all 0.5s ease-in-out 0.1s;
+}
+.main_body>ul>li.active{
+  opacity: 1;
+}
+.main_body>ul>li img.mainPic,.main_body>ul>li .pic_wrap{
+  position: relative;
+
+}
+.descp{
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,.8);
+}
+.pic_com_detail > .comment_wrap > li > p{font-size:20px;line-height: 35px;}
+.pic_com_detail > .comment_wrap > li > span{font-size:10px;line-height: 10px;bottom:-4px;}
+p.des{
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  color: #808080;
+  font-size: 23px;
+  line-height:35px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background:rgba(255,255,255,0.8);
+  text-indent:10px;
+}

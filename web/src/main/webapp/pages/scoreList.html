@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    xmlns:dt="http://www.thymeleaf.org/dandelion/datatables" lang="en">
+<head>
+<title>积分排名</title>
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="x5-orientation" content="portrait"/>
+
+<link rel="stylesheet" th:href="@{/static/css/score.css}"/>
+<script src="../static/js/jquery-1.8.3.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style type="text/css">
+   /*   .top{
+       position:fixed;
+       background: black;
+       width: 100%;
+       height:8%;
+       z-index:999;
+    }
+     .left{
+       position:relative;
+       width:70px;;
+       height:50%;
+       z-index: 3;
+    }
+     .right{
+       position:absolute;
+       top:0px;
+       width:100%;
+       height:100%;
+       color:white;
+       font-size:25px;
+       text-align:center;
+    }
+    .back{
+      margin-left:10px;
+      position:absolute;
+       width: 15px;
+      height: 25px;
+    }
+      .character{
+      position:absolute;
+      float:left;
+      width:40px;;
+      height:25px;
+      line-height:25px;
+      color:white;
+      font-size:18px;
+      margin-left:30px;;
+    }
+    .main{
+      position:absolute;
+      width:100%;
+    } */
+    .dateng{
+   
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -1.5rem;
+  margin-top: -1.5rem;
+   background-color:rgb(239, 73, 73);
+    border-radius:100px;
+    }
+    
+ .juewang{
+    posotion:relative;
+    float:left;
+    height:60px;
+    width:60px;
+    
+ }  
+</style>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    function backToPast(){
+    	
+    	var url=getBase()+"/new/homePage";
+     	window.location.href=url; 
+   
+	}
+	      
+    	    	
+    	    
+    function getBase() {
+		var curWwwPath = window.document.location.href;
+		var pathName = window.document.location.pathname;
+		var pos = curWwwPath.indexOf(pathName);
+		var localhostPaht = curWwwPath.substring(0, pos);
+		var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+		return (localhostPaht + projectName);
+	};
+	$(function(){
+	    if([[${scoreList}]].length>0){
+		    var time = [[${scoreList[0]}]].yearWeek;
+		    $("#time").text(time.substring(0,4)+'年第'+time.substring(4)+'周');
+	     };
+	});
+	
+	function excelThisWeekList()
+	{
+		window.location.href=getBase()+"/new/excelThisWeekList";
+		return false;
+	}
+/*  ]]> */
+</script>
+<script th:inline="javascript">
+/* <![CDATA[ */
+    wx.config({
+	    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	    appId: [[${appId}]], // 必填，公众号的唯一标识
+	    timestamp:[[${timestamp}]] , // 必填，生成签名的时间戳
+	    nonceStr: [[${noncestr}]], // 必填，生成签名的随机串
+	    signature: [[${signature}]],// 必填，签名，见附录1
+	    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+	
+    wx.ready(function(){
+		wx.onMenuShareAppMessage({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中，不服你就来挑战。', // 分享描述
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth', // 分享链接
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+		wx.onMenuShareTimeline({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中，不服你就来挑战。', // 分享链接
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth',
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+	    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+	});
+    wx.error(function(res){
+    	console.info("error");
+    	// config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+	});
+/* ]]> */
+</script>
+</head>
+
+<body>
+
+   <div class="main">
+		 <div class="nav" style="position:static;">		
+			<span class="d-ib fl va-m back" onclick="backToPast();">
+				<img th:src="@{/static/images/score/tu-4.png}" alt="返回" class="va-m"/>
+				<span class="d-ib va-m">返回</span>
+			</span>
+			
+			<h2>安全无忧</h2>
+			<span style="display:block;width:5rem;height:3rem;top:0rem;right:0rem;position:absolute;">
+				<a style="text-decoration:none;width:80%;height:80%;border-radius:3%;position:relative;margin-top:18%;font-size: 1.5rem;display:block;text-align: center;color:white;" onclick="excelThisWeekList()">导出</a>
+			</span>
+		</div>	 
+		<div id="time" style="width:100%;height:36px;top:36px;background: #2B2B2B;font-size:20px;text-align:center;"></div>
+		<!-- 
+		<div class="top">
+       <div class="left" onclick="backToPast();">
+       <div class="back">
+        <img style="width:100%;height:100%;" src="../static/images/choseModel/tu-4.png"/>
+       </div>
+       <div class="character">返回</div>
+       </div>
+        <div class="right">安全无忧</div>
+         </div> -->
+		
+		
+		<div class="content" style="margin-top:0px;">
+			<div class="list-wrapper">
+				<ul>
+					<li class="list-unit unit-1" th:each="ele1 : ${scoreList}">
+					<div th:if="${ele1.ranking} le 10">
+						<span class="medal d-ib  va-t">
+							<img th:src="@{/static/images/score/c}+${ele1.ranking}+'.png'" alt="勋章"/>
+						</span>
+						<span class="user d-ib  va-t">
+							<img th:src='${ele1.headPicture}' alt="头像" class="va-t"/>
+							<dl class="d-ib va-t">
+								<dd th:text="${ele1.nickName}"></dd>
+								<!-- <dd>123456789@qq.cohhhhhhm</dd> -->
+							</dl> 
+						</span>
+						<span class="count d-ib  va-t fr">
+							<img th:each="ele2 : ${ele1.jifenList}" th:src="@{/static/images/score/}+${ele2}+'.png'" />
+						</span>
+						</div> 
+						
+						<div th:if="${ele1.ranking} gt 10">
+						<span class="medal d-ib  va-t">
+						    <div class="dateng">
+						
+					<img style="position: relative;
+					           float:left;
+                                 top: 50%;
+                                 left: 50%;
+                              width: 3rem;
+                              height: 3rem;
+                         margin-left: -2.2em;
+                          margin-top: -1.5rem;" 
+  th:each="ele2 : ${ele1.rankingList}" th:src="@{/static/ranking/}+${ele2}+'.png'" />
+						 
+							</div>
+						</span>
+						<span class="user d-ib  va-t">
+							<img th:src='${ele1.headPicture}' alt="头像" class="va-t"/>
+							<dl class="d-ib va-t">
+								<dd th:text="${ele1.nickName}"></dd>
+								<!-- <dd>123456789@qq.cohhhhhhm</dd> -->
+							</dl> 
+						</span>
+						<span class="count d-ib  va-t fr">
+							<img th:each="ele2 : ${ele1.jifenList}" th:src="@{/static/images/score/}+${ele2}+'.png'" />
+						</span>
+						</div> 
+					</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

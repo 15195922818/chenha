@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.web.mapper.QuestionMapper">
+    <resultMap type="com.ai.web.entity.Question" id="QuestionMap">
+        <result column="question_id" property="questionId" jdbcType="VARCHAR" />        
+        <result column="question_description" property="questionDescription" jdbcType="VARCHAR" />
+        <result column="correct_picture" property="correctPicture" jdbcType="VARCHAR" />
+        <result column="error_picture_1" property="errorPicture1" jdbcType="VARCHAR" />
+        <result column="error_picture_2" property="errorPicture2" jdbcType="VARCHAR" />
+        <result column="error_picture_3" property="errorPicture3" jdbcType="VARCHAR" />
+        <result column="error_picture_4" property="errorPicture4" jdbcType="VARCHAR" />
+        <result column="error_picture_5" property="errorPicture5" jdbcType="VARCHAR" />
+        <result column="error_picture_6" property="errorPicture6" jdbcType="VARCHAR" />
+        <result column="error_picture_7" property="errorPicture7" jdbcType="VARCHAR" />
+        <result column="error_picture_8" property="errorPicture8" jdbcType="VARCHAR" />
+        <result column="error_picture_9" property="errorPicture9" jdbcType="VARCHAR" />
+    </resultMap>
+      <select id="countQuestionNumber" resultType="int">
+         select count(1) from question
+      </select>
+      
+      <select id="getQuestionById" parameterType="java.lang.String" resultMap="QuestionMap">
+          select * from question where question_id=#{questionId}
+      </select>
+      
+      <select id="getMaxOfWeek" parameterType="java.util.Map" resultType="java.lang.String">
+          select jifen from game_list where person_id=#{personId} and game_week=#{gameWeek} and is_week_max='1'
+      </select>
+    
+      <update id="updatePreviousMax" parameterType="java.util.Map">
+        update game_list set is_week_max='0' where person_id=#{personId} and game_week=#{gameWeek} and is_week_max='1'
+      </update>
+      
+      <insert id="insertGameRecord" parameterType="com.ai.web.entity.GameRecord">
+        insert into game_list(game_id,person_id,jifen,game_time,game_week,is_week_max,extend_field1) 
+        values(#{gameId},#{personId},#{jifen},#{gameTime},#{gameWeek},#{isWeekMax},#{extendField1})
+      </insert>
+      
+      <insert id="insertUser" parameterType="com.ai.web.entity.User">
+         insert into user(person_id,nick_name,head_picture) 
+         values(#{personId},#{nickName},#{headPicture})
+      </insert>
+      
+      <select id="getUserById" parameterType="java.lang.String" resultType="com.ai.web.entity.User">
+          select person_id personId,head_picture headPicture,nick_name nickName,double_game doubleGame, pk_times pkTimes from user
+          where person_id=#{personId}
+      </select>
+      
+      <update id="updateUser" parameterType="com.ai.web.entity.User">
+         update user set head_picture=#{headPicture},nick_name=#{nickName},double_game=null where person_id=#{personId}
+      </update>
+      
+      <insert id="insertLog" parameterType="Map">
+      	 insert into wx_share_log(ticket,accessToken,createDate,openId) values(#{ticketLog},#{accessTokenLog},#{dateStr},#{openId});
+      </insert>
+      <select id="getPkList" resultType="com.ai.web.entity.PkRecord" parameterType="java.lang.String">
+          select pk_id pkId,person_id_1 personId1,person_1_score person1Score,
+          person_id_2 personId2, person_2_score person2Score,ready_num readyNum from pk_list where pk_state='0' 
+          and (person_id_1=#{myId} or person_id_2=#{myId})
+      </select>
+      <select id="getPkUser" parameterType="java.lang.String" resultType="com.ai.web.entity.User">
+        select person_id personId,head_picture headPicture,nick_name nickName  from user where double_game is not null and person_id!=#{userId}
+      </select>
+      
+      <insert id="insertPkRecord" parameterType="java.util.Map">
+         insert into pk_list(pk_id,person_id_1,person_1_score,person_id_2,person_2_score,ready_num,pk_state,pk_time)
+					 values(
+					   #{pkId},
+					   #{personId1},
+					   '0',
+					   #{personId2},
+					   '0',
+					   '0',
+				   	   '0',
+                  DATE_FORMAT(now(),"%Y-%c-%d %h:%i:%s")
+
+)
+      </insert>
+      
+      <update id="updateUserToOne" parameterType="java.lang.String">
+         update user set double_game=null where person_id=#{userId} 
+      </update>
+      
+      <update id="updateUserToTwo" parameterType="java.lang.String">
+         update user set double_game='1' where person_id=#{personId}
+      </update>
+      
+      <update id="updateReadyNum" parameterType="java.lang.String">
+         update pk_list set ready_num=ready_num+1 where pk_id=#{pkId}
+      </update>
+      
+      <select id="getPkRecordById" parameterType="java.lang.String" resultType="com.ai.web.entity.PkRecord">
+           select pk_id pkId,person_id_1 personId1,person_1_score person1Score,
+          person_id_2 personId2, person_2_score person2Score,ready_num readyNum ,pk_state pkState from pk_list where pk_id=#{pkId}
+      </select>
+      
+      <update id="updatePkStatus" parameterType="java.lang.String">
+         update pk_list set pk_state='1' where pk_id=#{pkId}
+      </update>
+      
+      <delete id="deletePkRecoed" parameterType="java.lang.String">
+        delete from pk_list where pk_id=#{pkId}
+      </delete>
+      
+      <insert id="insertPkGameRecord" parameterType="com.ai.web.entity.GameRecord">
+        insert into game_list(game_id,person_id,jifen,game_time,game_week,is_week_max,pk_id,extend_field1) 
+        values(#{gameId},#{personId},#{jifen},#{gameTime},#{gameWeek},#{isWeekMax},#{pkId},#{extendField1})
+      </insert>
+      
+      <update id="updatePkRecord" parameterType="com.ai.web.entity.PkRecord">
+         update pk_list set person_1_score=#{person1Score},person_2_score=#{person2Score} where pk_id=#{pkId}
+      </update>
+      
+      
+      <update id="updatePkToOne" parameterType="java.util.Map">
+           update user set double_game=null where person_id=#{myId} or person_id=#{rivalId}
+      </update>
+      
+      <update id="updatePkTimes" parameterType="java.lang.String">
+        update user set pk_times = pk_times-1 where person_id=#{myId}
+      </update>
+      
+      <update id="updatePkTimesToOrigin">
+         update user set pk_times='5'
+      </update>
+      
+      <update id="updatePkTimesByShare" parameterType="java.lang.String">
+          update user set pk_times = pk_times+1 where person_id=#{myId}
+      </update>
+</mapper>

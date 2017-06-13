@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta name="x5-orientation" content="portrait"/>
+<title>首页</title>
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+<script src="../static/js/jquery-1.8.3.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style type="text/css">
+  html,body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display:block;
+}
+   
+    .bg{
+      background:rgb(48, 44, 44);
+     background-size: 100% 100%;
+     width: 100%;
+    
+ 
+      height: 100%; 
+      max-width:420px;
+      position:absolute;
+      overflow-y:scroll; 
+    }
+     .top{
+       position:absolute;
+       background: black;
+       width: 100%;
+       height:36px;
+    }
+      
+    .left{
+       position:relative;
+       width:70px;;
+       height:50%;
+       z-index: 3;
+       display:none;
+    }
+    .back{
+      margin-left:10px;
+      position:absolute;
+       width: 15px;
+      height: 25px;
+    }
+    .character{
+      position:absolute;
+      float:left;
+      width:40px;;
+      height:25px;
+      line-height:25px;
+      color:white;
+      font-size:18px;
+      margin-left:30px;;
+    }
+    .right{
+       position:absolute;
+       top:0px;
+       width:100%;
+       height:100%;
+       color:white;
+       font-size:25px;
+       text-align:center;
+    }
+  .description{
+     position:absolute;
+     top:8%;
+     height:92%;
+     width:90%;
+     left:5%;
+     color:white;
+     font-size:15px;
+  }
+  .rule{
+    width:100%;
+    margin-top:10px;
+  }
+  .range{
+     width:50%;
+     float:right;
+     text-align:center;
+     margin-bottom:10px;
+  }
+ 
+</style>
+<script>
+
+	function Parent(hello){
+	  this.hello = hello;
+	}
+	Parent.prototype.sayHello = function(){
+	  alert(this.hello);
+	}
+	Parent.prototype.he = "ddd";
+	function Child(hello,world){
+	  //Parent.call(this,hello);//将父类的属性继承过来
+	  this.hello = hello;
+	  this.world = world;//新增一些属性
+	}
+	Child.prototype = new Parent("d");
+	//var p = new Parent("Parent");
+	
+	//c.sayHello();
+	//c.sayWorld();
+	//par.sayHello();
+	//par.sayHello.call(c);
+    //p.sayHello.apply(c);
+    
+    
+    function aa(){
+    	
+    }
+    
+    
+    
+    Child.prototype = new Parent();
+   
+    var c = new Child("zhangsan","lisi");
+    aa.prototype = new Child("zhangsan1","lisi1");
+    aa.prototype.sayaa=function(){
+    	alert("aa");
+    }
+    var a = new aa();
+    
+    console.info(a);
+    a.sayHello();
+    a.sayaa();
+    
+</script>
+</head>
+
+<body>
+  
+   <div class="bg">
+    <div class="top">
+       <div class="left" onclick="backToPast();">
+       <div class="back">
+        <img style="width:100%;height:100%;" src="../static/images/choseModel/tu-4.png"/>
+       </div>
+       <div class="character">返回</div>
+       </div>
+        <div class="right">安元安全无忧</div>
+    </div>
+    <div class="description">
+   <div class="rule">
+      1、开发者：
+“安全无忧标识游戏”由“安元安全无忧”开发，是一款以安全为主题的标识识别游戏。
+   </div> 
+    <div class="rule">
+       2、关于积分: 
+通过答题，获取积分。一共10题，每题10分，每题时间10s。
+得分=答题得分+用时得分。答对越多，耗时越短，得分越高。
+ 游戏中还会随机出现得分X2的特效哦。
+   </div>
+   <div class="rule">
+      3、排名：
+排名只计个人最高分分值。一旦得分超过之前得分后，计入最高分得分分值及得分时间，一周后（周一至周日），本次积分将成为历史积分。新的一周开始后，重新排名。
+   </div>
+   <div class="rule">
+   4、用户级别：按照积分多少来分。
+    <div class="range">安全新手</div>         <div class="range">0-100</div>    
+   <div class="range"> 安全能手</div>      <div class="range">101-200</div>   
+   <div class="range">安全高手</div>     <div class="range">201-300</div>   
+     <div class="range">安全霸主</div>    <div class="range">301以上</div>   
+   </div>
+   <div class="rule rule5">
+      5、获奖情况：根据每周得分排名情况，前三名者获得礼品。
+得分相同者，根据获得最高得分时间来界定获奖人员名单，并于下周予以公布,每个用户每月只能领一次。
+   </div>
+   <div class="rule">
+      6、本游戏最终解释权归“安元安全无忧“所有。
+   </div>
+   
+   
+   </div>
+   </div>
+ 
+</body>
+</html>

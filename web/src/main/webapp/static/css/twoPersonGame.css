@@ -1,0 +1,362 @@
+.pie {width:60px; height:60px; background-color:blue; border-radius:100px; position:absolute; }
+.pie1 { clip:rect(0px,60px,60px,30px); -o-transform:rotate(0deg); -moz-transform:rotate(0deg); -webkit-transform:rotate(0deg); background:-moz-radial-gradient(20% 50% 0deg, #333, #0000ff); background:#00E2FF; }
+.pie2 { clip:rect(0px,30px,60px,0px); -o-transform:rotate(0deg); -moz-transform:rotate(0deg); -webkit-transform:rotate(0deg); background:-moz-radial-gradient(80% 50% 0deg, #333, #0000ff); background:#00E2FF; }
+
+
+.hold {width:60px; height:60px; position:absolute; z-index:1;}
+.hold1 { clip:rect(0px,60px,60px,30px); }
+.hold2 { clip:rect(0px,30px,60px,0px); }
+.bg1 {width:60px; height:60px; background-color:black; border-radius:100px; position:absolute; box-shadow:0px 0px 8px #333; background:-moz-radial-gradient(0% 50% 0deg, #900, #ff0000); background:-webkit-gradient(radial, 100 100, 0, 100 100, 110, from(#900), to(#121010)); }
+.time1 {width:50px; height:50px; margin:5px 0 0 5px; background-color:#fff; border-radius:25px; position:absolute; z-index:1; box-shadow:0px 0px 8px #333 inset; text-align:center; line-height:50px; font-family:"Book Antiqua", Palatino, serif; font-size:35px; font-weight:bold; text-shadow: 1px 1px 3px #333; }
+.time1 em { background:#fff; position:absolute; top:62px; left:12px; height:18px; width:140px; opacity:0.4; } 
+
+   html,body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  display:block;
+ /*   background:rgb(48, 44, 44); */
+   overflow-x:hidden;
+  
+}
+   
+    .bg{
+    
+     background:url("../images/choseModel/nbg.png") no-repeat;
+     background-size: 100% 100%;
+     width: 100%;
+    
+ 
+      height: 100%; 
+      max-width:420px;
+      position:absolute;
+      overflow-y:scroll;
+     /*  border-right:1px solid black; */
+      
+    }
+    .time{
+      font-size: 30px;
+      color: rgb(26, 255, 0);
+ 	  position: absolute;
+  	  top: 17.4%;
+  	  width: 20%;
+      left: 40%;
+  	  text-align:center
+    }
+    .top{
+       position:fixed;
+       background: black;
+       width: 100%;
+       height:36px;
+       z-index:10;
+       max-width:420px;
+    }
+    .question{
+        position:absolute;
+        color:white;
+        font-size:20px;
+        top:32%;
+        width: 86%;
+        left:10%;
+        height:10%;
+    }
+    .answer_area{
+      position:absolute;
+     /*  bottom:0; */
+     top:40%;
+      width:100%;
+      height:50%;
+    }
+    .answer1{
+   /*  position:absolute;
+      left:10%;
+      top :4%;
+      width:38%;
+      height:44%; */
+      position:absolute;
+      left:10%;
+      top :10%;
+      width:38%;
+      height:38%;
+    }
+    
+     .answer2{
+   /*    position:absolute;
+      right:10%;
+      top :4%;
+      width:38%;
+      height:44%; */
+       position:absolute;
+      right:10%;
+      top :10%;
+      width:38%;
+      height:38%;
+    }
+    
+     .answer3{
+     /*  position:absolute;
+      left:10%;
+      bottom :4%;
+      width:38%;
+      height:44%; */
+       position:absolute;
+      left:10%;
+      bottom :10%;
+      width:38%;
+      height:38%;
+    }
+    
+     .answer4{
+    /*   position:absolute;
+      right:10%;
+      bottom :4%;
+      width:38%;
+      height:44%; */
+        position:absolute;
+      right:10%;
+      bottom :10%;
+      width:38%;
+      height:38%;
+    }
+    .myNickName{
+       color:white;
+       position:absolute;
+        top: 30%;
+       width:26%;
+       left:15%;
+       text-align:left;
+    }
+    .rivalNickName{
+       color:white;
+       position:absolute;
+       top: 30%;
+       width:26%;
+       right:15%;
+       text-align:right;
+    }
+   .left{
+       position:relative;
+       width:70px;;
+       height:50%;
+       z-index: 13;
+       display:none;
+    }
+    .back{
+      margin-left:10px;
+      position:absolute;
+       width: 15px;
+      height: 25px;
+    }
+    .character{
+      position:absolute;
+      float:left;
+      width:40px;;
+      height:25px;
+      line-height:25px;
+      color:white;
+      font-size:18px;
+      margin-left:30px;;
+    }
+    .right{
+       position:absolute;
+       top:0px;
+       width:100%;
+       height:100%;
+       color:white;
+       font-size:25px;
+       text-align:center;
+    }
+    .middleWest{
+     background: url("../images/oneperson/tu-6.png") no-repeat;
+     background-size: 100% 100%;
+       max-width:420px;
+     width: 90%;
+     left:5%;
+     top:6%;
+    /*  height: 10%; */
+    height: 60px;
+    /*  position: fixed;    */
+    position: absolute;
+    }
+    .circle{
+       position:absolute;
+        left:156px; 
+       width:60px;
+       height:60px;
+       
+       
+    } 
+    
+    
+    
+    
+    
+     .round{
+      background:rgb(48, 44, 44);
+     /*  opacity:0.3; */
+      background-size: 100% 100%;
+      width: 100%;
+      height: 1000px;; 
+      max-width:420px;
+      position:fixed;
+      z-index:5;
+      display:none;
+    }
+    
+    
+     .picture{
+     position:absolute; 
+     width: 35%;
+     height: 15%;
+     top:6%;
+     left:32.5%;  
+     display:none;
+    }
+    
+     .desciption{
+       position:absolute;
+       width:100%;
+       top:20%;
+       text-align:center;
+      color:white;
+      font-size:30px;
+      margin-top:20px;
+    }
+    .desciption1{
+      position:absolute;
+       width:100%;
+       height:80px;
+       top:25%;
+      text-align:center;
+      color:white;
+      font-size:30px;
+    }
+    .desciption2{
+      position:absolute;
+       width:100%;
+       top:32%;
+      text-align:center;
+      color:white;
+      font-size:30px;
+    }
+    
+    .roundPicture{
+      position:absolute;
+      left:20%;
+      width:50%;   
+      height:80%;
+    }
+    .roundNumber{
+      position:absolute;
+      left:70%;
+      width:10%;  
+      height:100%;
+      color:rgb(242, 98, 98);
+      font-size:65px;
+      line-height:70px;
+    }
+    .double{
+       position:absolute;
+       width:40%;
+       height:100px;
+       top:40%;
+       left:30%;
+       z-index:100;
+       display:none;
+    }
+    .myPicture{
+     position:absolute;
+      width:20%;
+      height:50%;
+      top:10px;
+      left:-5%;   
+      border-radius:100px;
+      overflow:hidden;  
+    }
+    .rivalPicture{
+       position:absolute;
+      width:20%;
+      height:50%;
+      top:10px;
+      right:-5%; 
+      border-radius:100px;
+      overflow:hidden;  
+    }
+    .answerCorrectDiv1{
+      position:absolute;
+      bottom:0px;
+      width:4%;
+      left:3%;
+      height:100%;
+      background-color: black;
+      border-radius:100px;
+      overflow:hidden;
+    }
+     .answerCorrectDiv2{
+      position:absolute;
+      bottom:0px;
+      width:4%;
+      right:3%;
+      height:100%;
+      background-color: black;
+      border-radius:100px;
+      overflow:hidden;
+    }
+    
+    .myCorrect{
+       position:absolute;
+       bottom:0px;
+       width:100%;
+       height:0px;
+       border-radius:100px;
+       background-color: green;
+    }
+    .rivalCorrect{
+       position:absolute;
+       bottom:0px;
+       width:100%;
+       height:0px;
+       border-radius:100px;
+       background-color: red;
+    }
+    
+    .myScore{
+      color: white;
+	  position: absolute;
+	  bottom: 10%;
+	  width: 26%;
+	  left: 15%;
+	  text-align: center;
+    }
+    .rivalScore{
+      color: white;
+	  position: absolute;
+	  bottom: 10%;
+	  width: 26%;
+	  right: 15%;
+	  text-align: center;
+    }
+    
+    
+     .ready{
+        display: none;
+       
+        }
+    .go{
+        display:none;
+        
+    }
+    .newRound{
+      display:none;
+      width: 100%;
+    }
+    .danteng{
+      position:absolute;
+      top:40%;
+      width:100%;
+      height:20%;
+      text-align:center;
+      
+    }

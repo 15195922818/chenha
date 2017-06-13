@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+<head>
+<title>管理我的大屏幕</title>
+
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+
+<script src="../static/js/jquery-1.8.3.js"
+	th:src="@{/static/js/jquery-1.8.3.js}"></script>
+<script src="../static/jquery-jbox/2.3/jquery.jBox-2.3.min.js"
+	th:src="@{/static/jquery-jbox/2.3/jquery.jBox-2.3.min.js}"></script>
+<script src="../static/js/qrcode/jquery.qrcode.min.js"
+	th:src="@{/static/js/qrcode/jquery.qrcode.min.js}"></script>
+<script src="../static/js/datepicker.js"
+	th:src="@{/static/js/datepicker.js}"></script>
+<script src="../static/biaoge/jquery.ratsGrid.js"
+	th:src="@{/static/biaoge/jquery.ratsGrid.js}"></script>
+<script src="../static/biaoge/jquery.ratsPagination.js"
+	th:src="@{/static/biaoge/jquery.ratsPagination.js}"></script>
+<link rel="stylesheet" type="text/css"
+	href="../static/css/datepicker.css"
+	th:href="@{/static/css/datepicker.css}" />
+<link rel="stylesheet" href="../static/css/base.css"
+	th:href="@{/static/css/base.css}" />
+<link rel="stylesheet" href="../static/css/official.css"
+	th:href="@{/static/css/official.css}" />
+<link type="text/css" rel="stylesheet" 
+	href="../static/jquery-jbox/2.3/Skins/Green/jbox.css"/>
+<link rel="stylesheet" href="../static/bootstrap/2.3.1/css_cerulean/bootstrap.min.css" 
+	th:href="@{/static/bootstrap/2.3.1/css_cerulean/bootstrap.min.css}"/>
+	
+<!-- jbox表格样式 -->
+
+	
+<style type="text/css">
+#wrap {
+	background: none;
+}
+
+.body-back {
+	background: #010619 url(../static/images/bg_grey.jpg) center 0 repeat
+		scroll;
+}
+
+.icon-wxdp i {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	background: url(../static/images/icon_wxdp.png) no-repeat;
+	vertical-align: middle;
+	background-position: 11px 11px;
+}
+
+.icon-wxdp {
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: #89beff;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.picliclas{
+	margin-top:10px;
+	width: 1000px;
+	height:300px;
+}
+.piculclas{
+	width:1000px;
+}
+</style>
+<script th:inline="javascript">
+/*<![CDATA[*/
+	jQuery(function(){
+	})
+	
+	var jsonBack=/*[[${activeDataList}]]*/'activeDataList';
+	$(document).ready(function() {
+	
+	});
+/* 	]]> */
+</script>
+<script th:inline="javascript">
+	$(document).ready(function() {
+	 	$("#start_time").datepicker();
+	 	$("#end_time").datepicker(); 
+	 	initGrid();
+	});
+</script>
+<script>
+/*<![CDATA[*/
+
+
+	
+function initGrid(){
+	$("#equipTable").ratsGrid({
+		url : 'findpictypeid',
+		type : "get",
+		pagination:true,
+		pageSize:10,
+		colModel : [ {
+			header : '选择',
+			field : 'picTypeId',
+			align:'left',
+			format:function(value,ROW){
+				var name = ROW.picTypeName;
+				var PicAddress = ROW.picAddress;
+				var PicDepict = ROW.picDepict;
+				var OpenId = ROW.openId;
+				var SaveDateTime = ROW.saveDateTime;
+				return "<a style='cursor:pointer;' onclick=\"selectPic('"+value+"','"+name+"','"+PicAddress+"','"+PicDepict+"','"+OpenId+"','"+SaveDateTime+"');\">选择</a>";
+			}
+		}, {
+			header : '图片名称',
+			field : 'picTypeName',
+			align:'left'
+		}, {
+			header : '图片地址',
+			field : 'picAddress',
+			align:'left',
+			format:function(value,ROW){
+				return "<div style='width:100%;height:50px;'><img style='width:auto;height:100%;' src='"+($("#baseUrl").val() +value ) +"' /></div>";
+			}
+		},{
+			header : '描述',
+			field : 'picDepict',
+			align:'left'
+		},{
+			header : 'OpenId',
+			field : 'openId',
+			align:'left',
+			hide:true
+		},{
+			header : '保存日期',
+			field : 'saveDateTime',
+			align:'left'
+		}],
+		queryParams: {} ,
+		onInit : function(opts, data) {
+			opts.total = data.total; //数据总条数
+			$("#equipPagination").ratsPagination(opts)
+		},
+		onRowSelected : function(target, el, row) {
+
+		},
+		onPageSelected : function(opts, pageNumber) {
+			$("#equipTable").changePage(opts, pageNumber)
+		}
+	});
+}
+
+function selectPic(picTypeId, picTypeName,PicAddress,PicDepict,OpenId,SaveDateTime){
+	parent.updateScreen(picTypeId, picTypeName,PicAddress,PicDepict,OpenId,SaveDateTime);
+	parent.$.jBox.close();
+};
+/* 	]]> */
+</script>
+</head>
+
+<body>
+<input type="hidden" id="baseUrl" th:value="@{/}"/>
+	<div >
+	<h4>图片列表</h4>
+		
+	</div>
+		
+	<div>
+		<table id="equipTable"></table>
+		<div id="equipPagination"></div>
+	</div>
+</body>
+</html>

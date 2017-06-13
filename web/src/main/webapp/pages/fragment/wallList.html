@@ -1,0 +1,108 @@
+ <html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    xmlns:dt="http://www.thymeleaf.org/dandelion/datatables"
+      >
+<head>
+    <title>消息上下墙1</title>
+    <meta name="content-type" content="text/html; charset=UTF-8"></meta>
+	<script src="../static/js/jquery-1.8.3.js" th:src="@{/static/js/jquery-1.8.3.js}"></script>
+	<script src="../static/js/datepicker.js" th:src="@{/static/js/datepicker.js}"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/datepicker.css" th:href="@{/static/css/datepicker.css}" />
+	<link rel="stylesheet" href="../static/css/base.css" th:href="@{/static/css/base.css}" />
+	<link rel="stylesheet" href="../static/css/official.css" th:href="@{/static/css/official.css}" />
+	<link type="text/css" rel="stylesheet" href="../static/jquery-jbox/2.3/Skins/Green/jbox.css"/>
+	<script src="../static/jquery-jbox/2.3/jquery.jBox-2.3.min.js" th:src="@{/static/jquery-jbox/2.3/jquery.jBox-2.3.min.js}"></script>
+<style type="text/css">
+#wrap{
+	background:none;
+}
+.body-back{
+	background:#010619 url(../static/images/bg_grey.jpg) center 0 repeat scroll;
+}
+.picliclas{
+	display:inline;
+	margin-left:5px;
+	margin-top:10px;
+}
+.piculclas{
+	width:1000px;
+	height:70px;
+	overflow:auto;
+}
+</style>
+
+</head>
+ <body >
+ 	<ul class="wall-message-list messageCheck"
+		th:each="ele : ${viewWallDataList}" th:fragment="wallList">
+		<li class="clearfix js_chatBox">
+			<span style="display:none" class="getCommentId" th:text="${ele.comment_id}"></span>
+			<span style="display:none" class="getPicTypeId" th:text="${ele.PicTypeId}"></span>
+			<p class="check">
+				<label><input type="checkbox" class="msgSelectOne"
+					 /><span>选择</span></label>
+			</p> 
+			<a href="javascript:void(0);" class="user-mess-img"> <img
+				width="90" alt="" /></a>
+			<div class="message-center">
+				<a href="javascript:void(0);" class="user-name2"
+					></a>
+				<span th:text="${ele.PicComment}"></span>
+				<p class="datebox">
+					<span>发送时间：</span> <span>上墙时间：
+					<em	th:text="${ele.SaveDateTime}"></em></span>
+				</p>
+			</div>
+			<span th:if="${ele.messageState==1}">
+			<div class="btn-wrap6">
+				<a  onclick="wallconfirm(this,1)"
+					class="btn-success btn-wall-sigle js_showReplyBtn "><i
+					class="icon-under"></i>下墙</a>
+			</div>
+			</span>
+			<span th:if="${ele.messageState==2}">
+			<div class="btn-wrap6">
+				<a href="javascript:void(0);"  onclick="wallconfirm(this,2)"
+					class="btn-success btn-wall-sigle js_showReplyBtn "><i
+					class="icon-under" style="-webkit-transform: rotate(180deg) scale(1, 1);"></i>上墙</a>
+			</div>
+			</span>
+		</li>
+	</ul>
+	
+	<div th:fragment="header">
+		<div class="inner-header clearfix">
+			<!--<a th:href="@{/}" title="活动图片" class="logo left"></a> -->
+			<ul class="nav-list right">
+				<!-- <li><a th:href="@{/}">首页</a></li> -->
+				<!--<li><a th:href="@{/user/mainScreen}">查看主屏幕</a></li>
+				<li><a th:href="@{/user/findscreen}">查看屏幕</a></li>-->
+				<li><a th:href="@{/new/screenmanager}">查看屏幕</a></li>
+				<li><a th:href="@{/user/piclist}">查看图片</a></li>
+				<li><a th:href="@{/user/message}">消息上下墙</a></li>
+				<li><a th:href="@{/user/showParam}">参数维护</a></li>
+				<li><a href="javascript:tempTip();" title="帮助">帮助</a></li>
+				<li class=""><a th:href="@{/user/login}" title="登录" th:if="${username == null}">登录</a></li>
+				<li class="logged" th:if="${username != null}">
+					<a href="javascript:void(0);" class="username-login"><i th:text="${username}"></i><i class="arrow"></i></a>
+					<div class="dropbox" style="display: none;">
+						<a th:href="@{/user/findscreen}">屏幕信息</a>
+						<a href="javascript:void(0);" target="_blank">常见问题</a>
+						<a th:href="@{/user/logout}">退出</a>
+					</div>
+				</li>
+				<script>
+				$(function(){
+					//登录后弹层
+	               $(".logged").mouseenter(function(){
+	                   $(".dropbox").show();
+	               }).mouseleave(function(){
+	                   $(".dropbox").hide();
+	               });
+				});
+               </script>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

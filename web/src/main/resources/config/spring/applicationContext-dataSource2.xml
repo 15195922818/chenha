@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+    <context:property-placeholder location="classpath:config/jdbc.properties" ignore-unresolvable="true"/>
+    
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+          <property name="driverClassName" value="${db.driverClassName}"/>
+        <property name="url" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+          <property name="initialSize" value="20"/>
+          <property name="maxActive" value="100"/>
+          <property name="maxIdle" value="50"/>
+          <property name="minIdle" value="5"/>
+      </bean> 
+
+    <!-- enable the configuration of transactional behavior based on annotations -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- Mybatis's sqlSessionFactory config1 -->
+    <bean id="sqlSessionFactory"
+          class="org.mybatis.spring.SqlSessionFactoryBean"><!-- 扩展SqlSessionFactoryBean，实现mybatis配置文件修改热部署。如不想热部署可将Hot删除 -->
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:config/mybatis/mybatis-config.xml"/>
+    </bean>
+
+    <!-- scan mappers and let them be autowired -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ai.web.mapper"/>
+    </bean>
+
+
+    <bean id="druid-stat-interceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor"/>
+    <bean id="druid-stat-pointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut" scope="prototype">
+        <property name="patterns">
+            <list>
+                <value>com.ai.web.service.impl.*</value>
+                <value>com.ai.web.dao.*</value>
+                
+            </list>
+        </property>
+    </bean>
+
+    <aop:config>
+        <aop:advisor advice-ref="druid-stat-interceptor" pointcut-ref="druid-stat-pointcut"/>
+    </aop:config>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="select*" read-only="true"/>
+            <tx:method name="load*" read-only="true"/>
+            <tx:method name="list*" read-only="true"/>
+            <tx:method name="query*" read-only="true"/>
+            <tx:method name="get*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="insert*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="update*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="delete*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="save*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="login*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="register*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="modify*" read-only="false" propagation="REQUIRED" rollback-for="Throwable"/>
+            <tx:method name="*" timeout="10"/>
+        </tx:attributes>
+    </tx:advice>
+    <!-- 需要事务拦截的路径 -->
+
+    <aop:config>
+        <aop:pointcut id="serviceOperation"
+                      expression="execution(* com.ai.web.service..*.*(..)) or execution(* com.ai.core.service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
+    </aop:config>
+
+    <!-- nutz.dao配置 -->
+    <!-- <bean id="dao" class="org.nutz.dao.impl.NutDao">
+        <constructor-arg ref="dataSource" index="0"/>
+        <property name="runner" ref="springDaoRunner"/>
+    </bean> -->
+</beans>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:dt="http://www.thymeleaf.org/dandelion/datatables" th:fragment="screenList">
+<head>
+</head>
+
+<body>
+	<ul class="piculclas">
+		<li class="picliclas infobar" th:each="ele1 : ${screenList}" th:if="${ele1.picTypeId}!=mainscreen" style="width:100%;position:relative;">
+			<input id="serialId" name="serialId" style="display:none" th:value="${ele1.serialId}" />
+			<div style="float:left;height:100%;width:45%;text-align:left;">
+                      <div style="margin-top:12%;margin-left:18%;">
+                          <div class="showhideOutDiv" style="margin-top:10%;">
+                              <label>图片名称:&nbsp;&nbsp;&nbsp;</label>
+                              <label id="PicTypeNameId" name="PicTypeName" th:text="${ele1.PicTypeName}"></label>
+                          </div>
+                          
+                          <div class="showhideOutDiv" style="margin-top:10%;">
+                            <label >屏幕名称:&nbsp;&nbsp;&nbsp;</label>
+                            <label id="screenName" name="screenName" th:text="${ele1.screenName}"></label>
+                             <!--  <a href="javascript:void(0)"  onclick="showorhide(this)">修改</a> -->
+                          </div>
+                      </div>
+                  </div>
+			<div style="float:left;height:100%;width:35%;text-align:left;">
+				<a style="margin-left:10%;margin-top:15%;display:block;">
+					<img id="PicAdressId" style='width:300px;height:200px' th:src="@{'' + ${ele1.PicAddress}}" />
+				</a>
+			</div>
+			
+			<div style="float:left;height: 100%;width:20%;text-align:right;">
+				<div style="height:75%;text-align: right;">
+					<input class="screenPosition,screenLevel" type="button" style="width:auto;height:28px;;border: 1px solid grey;cursor:pointer;" th:value="${ele1.screenId} == 'mainscreen'?主屏:设为主屏" onclick="insertObjConfirm(this)"/>
+				</div>
+				<div style="bottom:0;position:Relative;bottom:0px;">
+				    <a id="saveObj" class="btn-green btn-my" href="javascript:void(0)" onclick="edit(this);">修改</a><!-- 
+					<a id="saveObj" class="btn-green btn-my" href="javascript:void(0)" onclick="insertObjConfirm(this)">保存</a> -->
+					<a id="deleteObj" class="btn-green btn-my" href="javascript:void(0)" onclick="insertObjConfirm(this)">删除</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</body>
+</html>

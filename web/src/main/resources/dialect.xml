@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="jquery">
+		<scripts>
+			<use descripe="jquery" ref="/static/js/jquery/1.7.1/jquery.js"></use>
+		</scripts>
+	</bean>
+	<bean id="datagrid">
+		<scripts>
+			<use descripe="jquery-resizable" ref="/static/core/AUI/js/jquery.resizable.js"></use>
+			<use descripe="AUI" ref="/static/core/AUI/js/AUI.js"></use>
+			<use descripe="AUI-datagrid-js" ref="/static/core/AUI/js/AUI.datagrid.js"></use>
+			<use descripe="AUI-pagination" ref="/static/core/AUI/js/AUI.pagination.js"></use>
+		</scripts>
+		<links>
+			<use descripe="AUI-datagrid-css" ref="/static/core/AUI/css/aui.datagrid.css"></use>
+		</links>
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+	<bean id="syntax">
+		<scripts>
+			<use descripe="jquery-syntax" ref="/static/core/jquery-syntax-3.1.1/jquery.syntax.js"></use>
+			<use descripe="jquery-syntax-cache" ref="/static/core/jquery-syntax-3.1.1/jquery.syntax.cache.js"></use>
+		</scripts>
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+	<bean id="bootstrap">
+		<scripts>
+			<use descripe="bootstrap-js" ref="/static/core/bootstrap/js/bootstrap.min.js"></use>
+		</scripts>
+		<links>
+			<use descripe="bootstrap-css" ref="/static/core/bootstrap/css/bootstrap.min.css"></use>
+		</links>
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+	<bean id="fontawesome">
+		<links>
+			<use descripe="fontawesome-css" ref="/static/core/fontawesome/css/font-awesome.css"></use>
+			<use descripe="fontawesome-css" ref="/static/core/fontawesome/css/font-awesome-ie7.css" lt="8"></use>
+		</links>
+	</bean>
+	<bean id="kindeditor">
+		<scripts>
+			<use descripe="kindeditor-js" ref="/static/core/kindeditor/4.1.10/kindeditor.js"></use>
+			<use descripe="kindeditor-i18n-js" ref="/static/core/kindeditor/4.1.10/lang/zh_CN.js"></use>
+			<use descripe="kindeditor-code-js" ref="/static/core/kindeditor/4.1.10/plugins/code/prettify.js"></use>
+			<use descripe="kindeditor-config-js" ref="/static/core/kindeditor/kindeditor-config.js"></use>
+		</scripts>
+		<links>
+			<use descripe="fontawesome-css" ref="/static/core/kindeditor/4.1.10/plugins/code/prettify.css"></use>
+		</links>
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+	<bean id="mutilupload">
+		<scripts>
+			<use descripe="swfupload-js" ref="/static/core/mutilupload/js/swfupload.js"></use>
+			<use descripe="swfupload-config-js" ref="/static/core/mutilupload/js/swfupload-config.js"></use>
+		</scripts>
+		<links>
+			<use descripe="swfupload-css" ref="/static/core/mutilupload/css/swfupload.css"></use>
+		</links>
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+	<bean id="simpleupload">
+		<scripts>
+			<use descripe="simpleupload-js" ref="/static/core/imagezoom/js/UploadJs.js"></use>
+			<use descripe="simpleupload-main-js" ref="/static/core/imagezoom/js/simpleUpload.js"></use>
+		</scripts>
+		<!-- <links>
+			<use descripe="simpleupload-css" ref="/static/core/imagezoom/css/swfupload.css"></use>
+		</links> -->
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+	<bean id="imagezoom">
+		<scripts>
+			<use descripe="Jcrop-js" ref="/static/core/imagezoom/js/jquery.Jcrop.js"></use>
+			<use descripe="UploadJs-js" ref="/static/core/imagezoom/js/UploadJs.js"></use>
+			<use descripe="imagezoom-js" ref="/static/core/imagezoom/js/picUtils.js"></use>
+		</scripts>
+	    <links>
+	    	<use descripe="Jcrop-css" ref="/static/core/imagezoom/css/jquery.Jcrop.css"></use>
+			<use descripe="picUtils-css" ref="/static/core/imagezoom/css/picUtils.css"></use>
+		</links>
+		<depends>
+			<depend ref="jquery"></depend>
+		</depends>
+	</bean>
+</beans>

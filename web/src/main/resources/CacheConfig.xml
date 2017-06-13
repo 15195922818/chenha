@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CacheConfig>
+<ConfigKind name="config">
+	<ConfigItem name="configSrc" remark="FILE">FILE</ConfigItem>
+</ConfigKind>
+
+<!-- Zookeeper配置-->
+<ConfigKind name="zk">
+    <ConfigItem name="zkServerList" remark="zk服务器列表">192.168.1.120:2181</ConfigItem>
+    <ConfigItem name="zkCatalog" remark="zk目录">/aicache</ConfigItem>
+    <ConfigItem name="notifyEnable" remark=""></ConfigItem>
+</ConfigKind>
+
+<local_caches>
+    <local_cache belong_group="AOP_BASE" bucket_num="5" capacity="20M"/>
+</local_caches>
+
+<cache_routers>
+	<cache_router data_type="String" cache_type="redis" belong_group="AOP_BASE" status="U" />
+</cache_routers>
+
+<cache_parameters>
+	<parameter server_code="REDIS" parameter_name="MaxActive" parameter_value="40" state="U" remark="连接池的最大连接数"/>
+    <parameter server_code="REDIS" parameter_name="MaxIdle" parameter_value="20" state="U" remark="最大等待连接中的数量"/>
+    <parameter server_code="REDIS" parameter_name="MaxWait" parameter_value="5000" state="U" remark="最大建立连接等待时间"/>
+    <parameter server_code="REDIS" parameter_name="TestOnBorrow" parameter_value="true" state="U" remark="获取连接时是否验证连接有效性"/>
+    <parameter server_code="REDIS" parameter_name="NeedWriteSYN" parameter_value="true" state="U" remark="是否需要对写操作同步"/>
+</cache_parameters>
+
+<cache_servers>
+	<server server_code="TEST_M" server_ip="192.168.1.120" server_port="7000"
+                belong_group="AOP_BASE" group_sort="1"  state="U" remarks="" />
+	<server server_code="TEST_M" server_ip="192.168.1.120" server_port="7001"
+                belong_group="AOP_BASE" group_sort="3"  state="U" remarks="" />
+	<server server_code="TEST_M" server_ip="192.168.1.120" server_port="7002"
+                belong_group="AOP_BASE" group_sort="1"  state="U" remarks="" />
+	<server server_code="TEST_M" server_ip="192.168.1.120" server_port="7003"
+                belong_group="AOP_BASE" group_sort="4"  state="U" remarks="" />
+	<server server_code="TEST_M" server_ip="192.168.1.120" server_port="7004"
+                belong_group="AOP_BASE" group_sort="5"  state="U" remarks="" />
+	<server server_code="TEST_M" server_ip="192.168.1.120" server_port="7005"
+                belong_group="AOP_BASE" group_sort="6"  state="U" remarks="" />
+</cache_servers>
+
+</CacheConfig>

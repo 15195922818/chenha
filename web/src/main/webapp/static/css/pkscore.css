@@ -1,0 +1,44 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin:0px;
+	color: #fff;
+	background: #fff;
+}
+
+.wholeDivClas{
+	background-color: #2B2B2B;
+	height:100%; 
+}
+
+.topDivClas{
+	text-align: center;
+	font-size:25px;
+	color: #fff;
+	width:100%;
+	height:5%;
+}
+
+.bottomDivClas{
+	height:95%;
+}
+
+.bdc_tpDivClas{
+	text-align: center;
+	height:20%;
+}
+
+.bdc_ctDivClas{
+	height:50%;
+}
+
+.bdc_btDivClas{
+	height:30%;
+}
+
+.bdc_t_content{
+	display:inline-block;
+	margin-top:10%;
+	font-size:45px;
+	font-weight: bolder;
+}

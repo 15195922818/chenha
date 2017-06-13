@@ -1,0 +1,697 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
+<title>游戏</title>
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+<meta name="x5-orientation" content="portrait"/>
+<script src="../static/js/jquery-1.8.3.js"></script>
+<link rel="stylesheet" th:href="@{/static/css/twoPersonGame.css}"/>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style type="text/css">
+</style>
+<script th:inline="javascript">
+/*<![CDATA[*/
+            //获得项目根路径
+	 function getBase() {
+	   	var curWwwPath = window.document.location.href;
+	   	var pathName = window.document.location.pathname;
+	   	var pos = curWwwPath.indexOf(pathName);
+	   	var localhostPaht = curWwwPath.substring(0, pos);
+		var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+	   	return (localhostPaht + projectName);
+	    };
+    $(function(){
+    	//是否有权进入
+    	$.ajax({
+				type : 'POST',
+				async:false,
+				url : getBase()+"/new/isPermit",
+				success:function(data){
+					if(data=='failure'){
+						var url=getBase()+"/new/homePage";
+						window.location.href=url;
+					}
+				},
+				error:function(){
+					alert("服务异常");
+				}
+			});
+    	$("#myNickName").text([[${session.user.nickName}]]);
+    	$("#rivalNickName").text([[${rival.nickName}]]);
+  
+        $("#answer_area").height($("#answer_area").width());
+    	
+    	
+    	
+        $(".middleWest").height($(".middleWest").width()*0.2956);
+        var top=$(".middleWest").width()*0.2956/2-30;
+       
+    	//倒计时
+    	//var left = $(".middleWest").width()/2-30+2; 
+    	
+    	var circleWidth = $(".middleWest").height()/1.5;
+    	$("#circle").width(circleWidth);
+    	$("#circle").height(circleWidth);
+    	$("#circle").css("left",($(".middleWest").width()/2-circleWidth/2+3)+"px");
+    	$("#circle").css("top",($(".middleWest").width()*0.2956/2-circleWidth/2)+"px");
+        
+    	
+    	$("#pie1").width(circleWidth);
+    	$("#pie1").height(circleWidth);
+    	document.getElementById("pie1").style.clip="rect(0px,"+circleWidth+"px,"+circleWidth+"px,"+circleWidth/2+"px)";
+    	
+    	$("#pie2").width(circleWidth);
+    	$("#pie2").height(circleWidth);
+    	document.getElementById("pie2").style.clip="rect(0px,"+circleWidth/2+"px,"+circleWidth+"px,0px)";
+    	
+    	$("#hold1").width(circleWidth);
+    	$("#hold1").height(circleWidth);
+    	document.getElementById("hold1").style.clip="rect(0px,"+circleWidth+"px,"+circleWidth+"px,"+circleWidth/2+"px)";
+    	
+    	
+    	$("#hold2").width(circleWidth);
+    	$("#hold2").height(circleWidth);
+    	document.getElementById("hold2").style.clip="rect(0px,"+circleWidth/2+"px,"+circleWidth+"px,0px)";
+    	
+    	$("#bg1").width(circleWidth);
+    	$("#bg1").height(circleWidth);
+    	
+    	$("#time1").width(circleWidth-10);
+    	$("#time1").height(circleWidth-10);
+    	$("#time1").css("line-height",circleWidth-10+"px");
+        document.getElementById("time1").style.borderRadius=(circleWidth/2-5)+"px";
+    	
+    	
+    	
+    	
+    	/* //遮罩层
+    	$(".picture").height($(".round").width()/3);
+    	$(".picture").css("left",$(".round").width()/2-$(".round").width()/6);
+    	$(".picture").show();
+    	roundNum=0; */
+    });
+     
+/*  ]]> */
+</script>
+<script type="text/javascript">
+  //双倍随机
+  var isDouble=false;
+  var doubleNum=0;
+  //圆环
+   var description;
+  var t1;
+  var t2;
+  var count2=0;
+  var p2=0;
+   //题目
+  var count=0;
+  var intervalid; 
+  var selectId=null;
+  var clickPermit=false;;
+  var score=0;
+  var qusetionData;
+  var correctIndex;
+  var questionNum=0;
+  var answerCorrect=0;
+  
+  //图片
+  var imgLoad=0; 
+  var timeCountClick=true;
+  
+  
+  //获取对手答题情况定时任务
+   var getRivalDetails;
+  
+  
+  //颜色
+  var color10="rgb(255, 255, 255)";
+  var color9="rgb(222, 249, 255)";
+  var color8="rgb(188, 244, 255)";
+  var color7="rgb(157, 239, 255)";
+  var color6="rgb(126, 232, 253)";
+  var color5="rgb(76, 224, 254)";
+  var color4="rgb(28, 210, 247)";
+  var color3="rgb(1, 193, 232)";
+  var color2="rgb(2, 176, 210)";
+  var color1="rgb(0, 159, 191)";
+   $(function(){
+	    //选取随机两倍题目
+	    double();
+	   //请求问题	 
+	   getQuestionData();
+	   
+	  //定时获取对手答题情况
+	  getRivalDetails=setInterval("getRivalCorrectAndScore()",3000);
+	   
+	  //选择答案
+	   $(".display").each(function(){
+	    	
+			    var id="#"+this.id;
+			    $(id).click(function(){
+			    	 if(timeCountClick==false){return;}
+			    	    if(clickPermit==false){return;}
+			    	    clickPermit=false;
+			    		selectId=id;
+			    	$(".display").each(function(){
+			    	  var newId="#"+this.id;
+			    	  var index=$(newId).attr('index');			    	 
+			    		  $(newId).hide();		    		
+			    	});
+			    	
+			    		  $("div [index="+correctIndex+"]").fadeIn("slow");
+			    		  
+			    
+			    	var thisIndex=$(id).attr('index');
+			    	if(thisIndex==correctIndex){
+			    		var correctNumber=parseInt(Math.random()*6)+1;		
+			    	    document.getElementById("correct"+correctNumber).play(); 
+			    		answerCorrect++;
+			    		//改变高度
+			    		//$('.myCorrect').height(0.1*answerCorrect*0.8*$('.answer_area').width());
+			    		$('.myCorrect'+answerCorrect).show();
+			    		//改变颜色
+			    		$('.myCorrect').css("background-color",eval("color"+answerCorrect));
+			    		if(questionNum==doubleNum){
+			    			score=score+2*(10-count)+10;
+			    			$("#double").show();
+			    			setTimeout("$('#double').fadeOut(500)",500);
+			    		}else{
+			    			score=score+(10-count)+10;
+			    		}	
+			    		$(".myScore").text("积分:"+score);
+			    	}else{
+			    		var errorNumber=parseInt(Math.random()*5)+1;
+			    		document.getElementById("error"+errorNumber).play(); 
+			    	}
+			    	//停止倒计时圆框
+			    	restart();
+			    	//停止倒计时时间
+			    	clearInterval(intervalid); 	
+			    	//更新问题回答次数(pkQuestionMap),分数(pkMap),回答正确的数目(pkMap)以及判断是否进入下一回合(pkQuestionMap)
+		    		 $.ajax({
+		    		   timeout:30000,
+			           type : 'POST',
+			           async:true,
+			           data:{"score":score,"answerCorrect":answerCorrect,"questionIndex":questionNum},
+		    		   url : "updateResponseNumAndScore",			
+			           success:function(msg){
+			        	   if(msg=='success'){
+			        		   //进入下一回合
+			        		   setTimeout("nextRound()",1000);
+			        	   }
+			           },
+			           error:function(){
+			        	   alert('请检查网络连接是否正常');
+			        	   var url=getBase()+"/new/homePage";
+						   window.location.href=url;
+			           }
+		    		}); 
+		            
+				});	 
+			    
+			 });
+   });
+   
+	function timeCount(){	
+		timeCountClick=false;
+		count=count+1;		
+		 if(count>=10){
+			 clickPermit=false;
+			 $(".time1").text(0);
+			 $(".display").each(function(){
+				 var id="#"+this.id;
+				 var index=$(id).attr('index');
+					 $(id).hide();
+									 
+			 });
+			 $("div [index="+correctIndex+"]").fadeIn("slow");
+			  clearInterval(intervalid); 
+			//更新问题回答次数(pkQuestionMap),分数(pkMap),回答正确的数目(pkMap)以及判断是否进入下一回合(pkQuestionMap)
+	    		 $.ajax({
+	    		   timeout:30000,
+		           type : 'POST',
+		           async:true,
+		           data:{"score":score,"answerCorrect":answerCorrect,"questionIndex":questionNum},
+	    		   url : "updateResponseNumAndScore",		
+		           success:function(msg){
+		        	   if(msg=='success'){
+		        		   //进入下一回合
+		        		   setTimeout("nextRound()",1000);
+		        	   }
+		           },
+		           error:function(){
+		        	   alert('请检查网络连接是否正常');
+		        		var url=getBase()+"/new/homePage";
+						window.location.href=url;
+		           }
+	    		}); 
+		
+			 return;
+		 }	  		
+		 $(".time1").text(10-count);	 
+		 timeCountClick=true;
+	 }   
+	
+	
+	function nextRound(){
+		getQuestionData();
+  		selectId=null;
+	    $(".display").each(function(){
+	    	 var id="#"+this.id;
+	    	 $(id).show();     	
+	    });
+		
+	}
+ 
+	var roundNum=1;
+	function getQuestionData(){
+		
+		if(questionNum==10){
+			/* $(".bg").hide();
+			$.ajax({
+				type : 'POST',
+				async:false,
+				url : getBase()+"/new/pkscore",
+				success:function(data){
+					if(data=="success"){ */
+						
+						var url=getBase()+"/new/pkscore";
+						window.location.href=url;
+					/* }else{
+						alert("录入记录失败!");
+						return;
+					}			
+				},
+				error:function(){
+					alert("服务异常");
+				}
+			}); */
+			
+	        return;
+		}
+		
+		
+		/* //显示遮罩
+		roundNum++;
+		$(".roundNumber").text(roundNum);
+		$(".desciption2").text(roundNum+"/10");
+		$('.round').show();
+		//背景音乐
+   	    document.getElementById("backgroundMusic").play(); 
+   	
+		 //隐藏遮罩
+	    setTimeout("$('.round').hide()",2000); */
+	    
+	   //背景音乐
+   	    document.getElementById("backgroundMusic").play(); 	 
+		 
+		 
+		
+		 questionNum++;
+		 $.ajax({
+			    timeout:15000,
+				type : 'POST',
+				async:false,
+				data:{"questionIndex":questionNum},
+				url : 'getPkQuestionData',
+				success : function(msg){
+					qusetionData=jQuery.parseJSON(msg);
+	    			 description = qusetionData.description;
+	    			 $("#question").text("请问下列哪个选项是"+description+"的标识?");
+					 var pictureList = qusetionData.picture;
+					
+					 var length=pictureList.length;
+					
+					   var m=0;
+					  for(var picture in pictureList){
+						  var showIndex=pictureList[m].showIndex;
+						  var pictureUrl=pictureList[m].pictureUrl;
+						  var correct=pictureList[m].correct;
+						  if(correct){
+							  correctIndex=showIndex;
+						  }
+						  if(pictureList[m].showIndex==1){
+							  $("#answer1").attr("src",pictureUrl);
+						  }
+	                      if(pictureList[m].showIndex==2){
+	                    	  $("#answer2").attr("src",pictureUrl);
+						  }
+							if(pictureList[m].showIndex==3){
+							  $("#answer3").attr("src",pictureUrl);
+						  }
+						 if(pictureList[m].showIndex==4){
+							  $("#answer4").attr("src",pictureUrl);
+						  }
+						    m++;
+					 }
+				   
+				},
+				error : function(){
+					alert('请检查网络连接是否正常');
+					var url=getBase()+"/new/homePage";
+					window.location.href=url;
+				}
+			}); 
+		 
+		 
+		 //new round
+		 $('.question').hide();
+		 $('#answer_area').hide();
+		 $(".danteng").show();
+		 if(questionNum==1){		 		
+			 $(".ready").fadeIn(500);
+			 setTimeout("$('.ready').hide()",800);
+			 setTimeout("$('.go').fadeIn(500)",800);
+			 setTimeout("$('.go').hide()",1600);
+			 setTimeout("waitPicture()",1600);
+		 }else{
+			 $(".newRound").attr("src","../static/game/newRound"+questionNum+".png")
+			 $(".newRound").fadeIn(1600);
+			 setTimeout("$('.newRound').hide()",1600);
+			 setTimeout("waitPicture()",1600);
+		 }
+	}
+	
+	function waitPicture(){
+		
+		 $(".danteng").hide();
+		 $('.question').show();
+		 $('#answer_area').show();
+		 
+		 
+		timeCountClick=true;
+		clickPermit=true;
+		 count=0;
+		  $(".time1").text(10);	
+		  $(".pie1").css("-webkit-transform","rotate(" + 0 + "deg)");
+	      $(".pie2").css("-webkit-transform","rotate(" + 0 + "deg)");
+	      intervalid=setInterval("timeCount()",1000);
+		  t1 = setInterval("task1()",1000);
+	}
+	
+	function double(){
+		doubleNum=parseInt(Math.random()*10)+1;
+	}
+	
+	
+		
+	 function backToPast(){
+		 var url=getBase()+"/new/homePage";
+		 window.location.href=url; 
+	 }
+	 
+	    
+	   
+	    var num1=0;	
+function task1(){
+  
+    $(".pie2").css("-webkit-transform","rotate(" + 0 + "deg)");
+    count2++;
+	 num1=36*count2;
+	 $(".pie1").css("-webkit-transform","rotate(" + num1 + "deg)");
+	 if(num1==180){
+	     count2=0;
+		 clearInterval(t1);
+		 t2 = setInterval("task2()",1000);
+	 }
+ }
+ 
+ 
+ function task2(){
+    p2++;
+    count2++;
+	var num2=36*count2;
+	 $(".pie2").css("-webkit-transform","rotate(" + num2 + "deg)");
+	
+	 if(num2==180){    
+         restart1();
+		
+	 }
+ }
+ 
+
+ //点击清除
+ function restart(){
+	   clearInterval(t1);
+	   if(p2>0 || num1==180){
+	    clearInterval(t2);
+	   } 
+	        p2=0;
+		    count2=0;
+     }
+ //到时清除
+ function  restart1(){
+        p2=0;
+	    count2=0;
+	    clearInterval(t2);
+ }
+ 
+
+function getRivalCorrectAndScore(){
+	 $.ajax({
+		    timeout:20000,
+			type : 'POST',
+			async:true,
+			url : 'getRivalCorrectNumAndScore',
+			success : function(data){
+				var $data=jQuery.parseJSON(data);
+				var score = $data.score;
+				var correctNum=$data.correctNum;
+				$(".rivalScore").text("积分:"+score);
+				//$('.rivalCorrect').height(0.1*correctNum*0.8*$('.answer_area').width());
+				$('.rivalCorrect'+correctNum).show();
+				$('.rivalCorrect').css("background-color",eval("color"+correctNum));
+			},
+			error : function(){
+			//	    alert("服务异常");
+				   alert('请检查网络连接是否正常');
+	        	   var url=getBase()+"/new/homePage";
+				   window.location.href=url;
+			     }
+			});	
+} 
+</script>
+<script th:inline="javascript">
+/* <![CDATA[ */
+    wx.config({
+	    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	    appId: [[${appId}]], // 必填，公众号的唯一标识
+	    timestamp:[[${timestamp}]] , // 必填，生成签名的时间戳
+	    nonceStr: [[${noncestr}]], // 必填，生成签名的随机串
+	    signature: [[${signature}]],// 必填，签名，见附录1
+	    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+	
+    wx.ready(function(){
+		wx.onMenuShareAppMessage({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中，不服你就来挑战。', // 分享描述
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth', // 分享链接
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+		wx.onMenuShareTimeline({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中，不服你就来挑战。', // 分享链接
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth',
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+	    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+	});
+    wx.error(function(res){
+    	console.info("error");
+    	// config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+	});
+	$("#morePerson").click(function(){
+		alert("2");  	
+	})
+/* ]]> */
+</script>
+
+<script th:inline="javascript">
+/* <![CDATA[ */
+    $(function(){
+    	$('.myPicture').height($('.myPicture').width());
+    	$('.rivalPicture').height($('.rivalPicture').width());
+    	
+    	var correctHeight = 0.8*$('.answer_area').width();
+    	//总
+    	$('.answerCorrectDiv').height(correctHeight);
+    	$('.answerCorrectDiv').css("bottom",0.1*$('.answer_area').width());
+    	//分
+    //	$('.correct').height(0.1*correctHeight);
+    	
+    	$('#myHeadPicture').attr("src",[[${session.user.headPicture}]]);
+    	$('#rivalHeadPicture').attr("src",[[${rival.headPicture}]]);
+    	
+    });
+/* ]]> */
+</script>
+</head>
+
+<body>
+     <div class="round">
+        
+         <div class="picture">
+           <img style="width:100%;" src="../static/images/choseModel/LOGO.png"/>
+         </div>
+         <div class="desciption">
+                                                         安全无忧
+         </div>
+         <div class="desciption1">
+              <div class="roundPicture">
+                 <img style="width:100%;height:100%;" src="../static/game/round.png"/>
+              </div>   
+              <div class="roundNumber"></div>                                  
+         </div>
+         <div class="desciption2">
+              1/10                                 
+         </div>
+     </div>
+     
+     <div id="double" class="double">
+        <img style="width:100%;height:100%;" src="../static/game/double.png"/>
+     </div>
+     
+     
+     
+    <div class="bg" id="bg">
+   <div class="middleWest">
+       <div class="circle" id="circle"> 
+            <div class="hold hold1" id="hold1">
+               <div class="pie pie1" id="pie1"></div>
+            </div>
+            <div class="hold hold2" id="hold2">
+               <div class="pie pie2" id="pie2"></div>
+           </div>
+           <div class="bg1" id="bg1"> </div>
+           <div class="time1" id="time1"></div>
+        </div>  
+        
+        
+    <!--  <div id="nickName" class="nickName"></div>
+     <div class="score" id="score">积分:0</div> -->
+     <div id="myNickName" class="myNickName"></div>
+     <div class="rivalNickName" id="rivalNickName">积分:0</div>
+     
+     
+     <div class="myPicture">
+          <img id="myHeadPicture" style="width:100%;height:100%;" src="../static/game/lookRival/tu-1.png"/>
+     </div>
+      <div class="rivalPicture">
+         <img id="rivalHeadPicture" style="width:100%;height:100%;" src="../static/game/lookRival/tu-1.png"/>
+     </div> 
+     <div class="myScore">积分:0</div>
+      <div class="rivalScore">积分:0</div>
+   </div>
+   
+   
+     
+   
+   
+    <div class="top">
+       <div class="left" onclick="backToPast();">
+       <div class="back">
+        <img style="width:100%;height:100%;" src="../static/images/choseModel/tu-4.png"/>
+       </div>
+       <div class="character">返回</div>
+       </div>
+        <div class="right">安元安全无忧</div>
+    </div>
+     
+   <div class="question" id="question"></div>
+   <div class="answer_area" id="answer_area"> 
+      <div class="display answer1" id="answer_area_1" index="1">
+         <img id="answer1" style="width:100%;height:100%;" src=""/>
+      </div>
+      <div class="display answer2" id="answer_area_2" index="2">
+        <img id="answer2" style="width:100%;height:100%;" src=""/>
+      </div>
+      <div class="display answer3" id="answer_area_3" index="3">
+         <img id="answer3" style="width:100%;height:100%;" src=""/>
+      </div>
+      <div class="display answer4" id="answer_area_4" index="4">
+         <img id="answer4" style="width:100%;height:100%;" src=""/>
+      </div>
+      
+      <div class="answerCorrectDiv answerCorrectDiv1">
+         <!--  <div class="myCorrect"></div> -->
+          <div class="myCorrect10" style="background-color:rgb(255, 255, 255);width:100%;height:10%;display:none;position:absolute;top:0px;"></div>
+          <div class="myCorrect10 myCorrect9" style="background-color:rgb(222, 249, 255);width:100%;height:10%;display:none;position:absolute;top:10%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8" style="background-color:rgb(188, 244, 255);width:100%;height:10%;display:none;position:absolute;top:20%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7" style="background-color:rgb(157, 239, 255);width:100%;height:10%;display:none;position:absolute;top:30%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7 myCorrect6" style="background-color:rgb(126, 232, 253);width:100%;height:10%;display:none;position:absolute;top:40%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7 myCorrect6 myCorrect5" style="background-color:rgb(76, 224, 254);width:100%;height:10%;display:none;position:absolute;top:50%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7 myCorrect6 myCorrect5 myCorrect4" style="background-color:rgb(28, 210, 247);width:100%;height:10%;display:none;position:absolute;top:60%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7 myCorrect6 myCorrect5 myCorrect4
+          myCorrect3" style="background-color:rgb(1, 193, 232);width:100%;height:10%;display:none;position:absolute;top:70%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7 myCorrect6 myCorrect5 myCorrect4
+          myCorrect3 myCorrect2" style="background-color:rgb(2, 176, 210);width:100%;height:10%;display:none;position:absolute;top:80%;"></div>
+          <div class="myCorrect10 myCorrect9 myCorrect8 myCorrect7 myCorrect6 myCorrect5 myCorrect4
+          myCorrect3 myCorrect2 myCorrect1" style="background-color:rgb(0, 159, 191);width:100%;height:10%;display:none;position:absolute;top:90%;"></div>
+      </div>
+      <div class="answerCorrectDiv answerCorrectDiv2">
+         <!--   <div class="rivalCorrect"></div> -->
+         <div class="rivalCorrect10" style="background-color:rgb(255, 255, 255);width:100%;height:10%;display:none;position:absolute;top:0px;"></div>
+          <div class="rivalCorrect10 rivalCorrect9" style="background-color:rgb(222, 249, 255);width:100%;height:10%;display:none;position:absolute;top:10%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8" style="background-color:rgb(188, 244, 255);width:100%;height:10%;display:none;position:absolute;top:20%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7" style="background-color:rgb(157, 239, 255);width:100%;height:10%;display:none;position:absolute;top:30%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7 rivalCorrect6" style="background-color:rgb(126, 232, 253);width:100%;height:10%;display:none;position:absolute;top:40%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7 rivalCorrect6 rivalCorrect5" style="background-color:rgb(76, 224, 254);width:100%;height:10%;display:none;position:absolute;top:50%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7 rivalCorrect6 rivalCorrect5 rivalCorrect4" style="background-color:rgb(28, 210, 247);width:100%;height:10%;display:none;position:absolute;top:60%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7 rivalCorrect6 rivalCorrect5 rivalCorrect4
+          rivalCorrect3" style="background-color:rgb(1, 193, 232);width:100%;height:10%;display:none;position:absolute;top:70%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7 rivalCorrect6 rivalCorrect5 rivalCorrect4
+          rivalCorrect3 rivalCorrect2" style="background-color:rgb(2, 176, 210);width:100%;height:10%;display:none;position:absolute;top:80%;"></div>
+          <div class="rivalCorrect10 rivalCorrect9 rivalCorrect8 rivalCorrect7 rivalCorrect6 rivalCorrect5 rivalCorrect4
+          rivalCorrect3 rivalCorrect2 rivalCorrect1" style="background-color:rgb(0, 159, 191);width:100%;height:10%;display:none;position:absolute;top:90%;"></div>
+      </div>
+   </div>
+   
+    <div class="danteng">
+    <img class="ready" src="../static/game/ready.png"></img>
+    <img class="go" src="../static/game/go.png"></img>
+   <!--  <img class="newRound2 newRound" src="../static/game/newRound2.png"></img>
+    <img class="newRound3 newRound" src="../static/game/newRound3.png"></img>
+    <img class="newRound4 newRound" src="../static/game/newRound4.png"></img>
+    <img class="newRound5 newRound" src="../static/game/newRound5.png"></img>
+    <img class="newRound6 newRound" src="../static/game/newRound6.png"></img>
+    <img class="newRound7 newRound" src="../static/game/newRound7.png"></img>
+    <img class="newRound8 newRound" src="../static/game/newRound8.png"></img>
+    <img class="newRound9 newRound" src="../static/game/newRound9.png"></img>
+    <img class="newRound10 newRound" src="../static/game/newRound10.png"></img> -->
+    <img class="newRound" style="width:100%;height:200px;" src="../static/game/newRound2.png"></img>
+    </div>
+    </div>
+    
+     <audio id="correct1" src="../static/music/correct/correct1.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="correct2" src="../static/music/correct/correct2.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="correct3" src="../static/music/correct/correct3.wav" controls="controls"  hidden="true"></audio>
+     <audio id="correct4" src="../static/music/correct/correct4.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="correct5" src="../static/music/correct/correct5.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="correct6" src="../static/music/correct/correct6.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="error1" src="../static/music/error/error1.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="error2" src="../static/music/error/error2.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="error3" src="../static/music/error/error3.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="error4" src="../static/music/error/error4.mp3" controls="controls"  hidden="true"></audio>
+     <audio id="error5" src="../static/music/error/error5.mp3" controls="controls"  hidden="true"></audio> 
+     
+     <audio id="backgroundMusic" src="../static/music/backgroundMusic.mp3" loop="loop" hidden="true"></audio>
+</body>
+</html>

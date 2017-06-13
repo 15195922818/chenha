@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta name="x5-orientation" content="portrait"/>
+<title>首页</title>
+<meta name="content-type" content="text/html; charset=UTF-8"></meta>
+<script src="../static/js/jquery-1.8.3.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<style type="text/css">
+  html,body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display:block;
+}
+   
+    .bg{
+     background: url("../static/game/lookRival/bg.png") no-repeat;
+     background-size: 100% 100%;
+     width: 100%;
+     height: 100%;
+     max-width:420px;
+     position: fixed;    
+    }
+     .top{
+       position:absolute;
+       background: black;
+       width: 100%;
+       height:36px;
+    }
+      
+    .left{
+       position:relative;
+       width:70px;;
+       height:50%;
+       z-index: 3;
+       display:none;
+    }
+    .back{
+      margin-left:10px;
+      position:absolute;
+       width: 15px;
+      height: 25px;
+    }
+    .character{
+      position:absolute;
+      float:left;
+      width:40px;;
+      height:25px;
+      line-height:25px;
+      color:white;
+      font-size:18px;
+      margin-left:30px;;
+    }
+    .right{
+       position:absolute;
+       top:0px;
+       width:100%;
+       height:100%;
+       color:white;
+       font-size:25px;
+       text-align:center;
+    }
+ 
+ 
+ .center{
+     background: url("../static/game/lookRival/tu.png") no-repeat;
+     background-size: 100% 100%;
+     position:absolute;
+     top:34px;
+     width:100%;
+     height:45%;
+ }
+ .myData{
+     position:absolute;
+     top:30%;
+     width:100%;
+     height:30%;
+ }
+ .myPicture{
+    position:absolute;
+    left:10%;
+    width:30%;
+    height:100%;
+    border-radius: 100px; 
+    overflow: hidden;
+ }
+ .info{
+      position:absolute;
+      right:0px;
+       height:100%;
+       width:50%;
+ }
+ .details{
+    position:relative;
+    width:100%;
+    height:40%;
+    color:white;
+    font-size:20px;
+ }
+ .wait{
+    position:absolute;
+    bottom:10%;
+    height:5%;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:15px;
+ }
+ .lookRival{
+    position:absolute;
+    bottom:20%;
+    width:100%;
+     height:20%;
+ }
+ .rival{
+    width:33.333%;
+    float:left;
+    height:100%;
+    text-align: center;
+ }
+ .smallRival{
+    height:33%;
+    width:20%;
+    margin-top:33%;
+    margin-left:20%;
+    float:left;
+ }
+ .wait1{
+    display:none;
+ }
+ 
+ .change{
+    width:80%;
+    height:80%;
+    display:inline-block;
+ }
+</style>
+<script th:inline="javascript">
+/*<![CDATA[*/
+           var index=0;
+           var rivalWidth=0;
+    $(function(){
+    	$('.nickName').text([[${session.user.nickName}]]);
+    //	$('.maxScore').text("积分: "+[[${maxScore}]]);
+    	$('.myPicture').height($('.myPicture').width());
+    	$('#headPicture').attr("src",[[${session.user.headPicture}]]);
+    	$('#rivalPicture').height($('#rivalPicture').width());
+    	rivalWidth=$('#rivalPicture').width();
+    	setTimeout("lookRival()",0);
+    	setInterval("hehe()",1000);
+    	setInterval("change()",1000);
+    });
+	    
+	function lookRival(){
+		 $.ajax({
+			    async : true,
+			    timeout:100000,
+    		    type : 'POST',				
+				url : getBase()+'/new/matches',
+				success : function(msg){
+					//匹配成功,进入双人游戏
+					if(msg=='success'){
+						$.ajax({
+							type : 'POST',
+							async:true,
+							url : getBase()+'/new/isReady',
+							success:function(msg){
+								if(msg=='success'){
+									var url=getBase()+"/new/twoPersonGame";
+									window.location.href=url;
+								}
+								if(msg=='failure'){
+									alert("匹配失败,请重新寻找对手");
+									var url=getBase()+"/new/homePage";
+									window.location.href=url;
+								}
+								if(msg=='timeOut'){
+									alert("timeOut");
+									var url=getBase()+"/new/homePage";
+									window.location.href=url;
+								}
+							},
+							error:function(){
+								 $.ajax({
+									type : 'POST',
+									async:true,
+									url : getBase()+'/new/deletePkRecord',
+									success:function(){},
+									error:function(){}
+								}); 
+								alert('请重新进入游戏');
+							}
+						});
+						
+					}
+					//超多三十秒,进入单人游戏
+					if(msg=='failure'){
+						/* $.ajax({
+							type : 'POST',
+							async:false,
+							url : getBase()+'/new/updateUserToOne',
+							success:function(msg){
+								if(msg=='success'){ */
+									var url=getBase()+'/new/game';
+									window.location.href=url;
+								/* }
+							},
+							error:function(){
+								alert('服务异常2');
+							}
+						}); */
+					}
+					//进入游戏后退出,返回homePage
+					if(msg=='homePage'){
+						var url=getBase()+'/new/homePage';
+						window.location.href=url;
+					}
+					
+				},
+				error : function(){
+					$.ajax({
+						type : 'POST',
+						async:false,
+						url : getBase()+'/new/updateUserToOne',
+						success:function(msg){
+							var url=getBase()+'/new/homePage';
+							window.location.href=url;
+						},
+						error:function(){
+							alert('服务异常3');
+						}
+					});
+				}
+    	 });   	 
+	} 
+	
+    function getBase() {
+		var curWwwPath = window.document.location.href;
+		var pathName = window.document.location.pathname;
+		var pos = curWwwPath.indexOf(pathName);
+		var localhostPaht = curWwwPath.substring(0, pos);
+		var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+		return (localhostPaht + projectName);
+	};
+	
+	function hehe(){  
+		$('.wait1').each(function(){
+			var id=this.id;
+			$('#'+id).show();
+		});
+	   if(index==0){
+			 $("#point1").hide();
+			 $("#point2").hide();
+			 $("#point3").hide();
+		}
+	   if(index==1){
+		   $("#point2").hide();
+			 $("#point3").hide();
+	   }
+		 if(index==2){
+			 $("#point3").hide();	   
+			  }
+			   
+			
+	
+		index++;
+		 if(index>3){
+			   index=0;
+		  }
+		
+	}
+	
+	function change(){
+		var width=$('.change').width()+5;
+		if(width>rivalWidth){
+			width=0.8*rivalWidth;
+		}
+		$('.change').height(width);
+		$('.change').width(width);
+	}
+/*  ]]> */
+</script>
+
+<script th:inline="javascript">
+/* <![CDATA[ */
+   	wx.config({
+	    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	    appId: [[${appId}]], // 必填，公众号的唯一标识
+	    timestamp:[[${timestamp}]] , // 必填，生成签名的时间戳
+	    nonceStr: [[${noncestr}]], // 必填，生成签名的随机串
+	    signature: [[${signature}]],// 必填，签名，见附录1
+	    jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+	});
+	
+    wx.ready(function(){
+		wx.onMenuShareAppMessage({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中，不服你就来挑战。', // 分享描述
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth', // 分享链接
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+		wx.onMenuShareTimeline({
+		    title: '你认识几个安全图标', // 分享标题
+		    desc: '我在安全无忧标识游戏中，不服你就来挑战。', // 分享链接
+		    link: 'http://examgame.51safety.com.cn/wxcs/new/auth',
+		    imgUrl: [[${session.user.headPicture}]], // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		
+	    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+	});
+    wx.error(function(res){
+    	console.info("error");
+    	// config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+	});
+/* ]]> */
+</script>
+</head>
+
+ <body>
+ <div class="bg">
+     <div class="top">
+       <div class="left" onclick="backToPast();">
+       <div class="back">
+        <img style="width:100%;height:100%;" src="../static/images/choseModel/tu-4.png"/>
+       </div>
+       <div class="character">返回</div>
+       </div>
+        <div class="right">安元安全无忧</div>
+    </div>
+    <div class="center">
+       <div class="myData">
+           <div class="myPicture">
+               <img id="headPicture" style="width:100%;height:100%;" src="../static/game/lookRival/tu-1.png"/>
+           </div>
+           <div class="info">
+               <div class="details nickName" style="margin-top:20%;"></div>
+              <!--  <div class="details maxScore"></div> -->
+           </div>
+       </div>
+    </div>
+    <div class="lookRival">
+         <div class="rival">
+            <div class="smallRival">
+                <img style="width:100%;height:100%;" src="../static/game/lookRival/tu-3.png"/>
+            </div>
+               <div class="smallRival">
+                    <img style="width:100%;height:100%;" src="../static/game/lookRival/tu-3.png"/>
+               </div>
+         </div>
+           <div class="rival" id="rivalPicture">
+              <div class="change">
+              <img style="width:100%;height:100%;" src="../static/game/lookRival/tu-4.png"/>
+              </div>
+           </div>
+             <div class="rival">
+                <div class="smallRival">
+                <img style="width:100%;height:100%;" src="../static/game/lookRival/tu-3.png"/>
+            </div>
+               <div class="smallRival">
+                    <img style="width:100%;height:100%;" src="../static/game/lookRival/tu-3.png"/>
+               </div>
+             </div>
+    </div>
+    <div class="wait">
+       系统正在为您寻找队友,请稍等...
+       <span class="wait1" id="point1">.</span>
+        <span class="wait1" id="point2">.</span>
+         <span class="wait1" id="point3">.</span>
+    </div>
+ </div>
+</body>
+</html>

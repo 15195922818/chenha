@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ai.web.mapper.WeixinScreenPicListMapper">
+    <resultMap type="com.ai.web.entity.weixinscreenData" id="ScreenListMap">
+        <result column="PERSON_ID" property="personId" jdbcType="VARCHAR" />        
+        <result column="NICK_NAME" property="nickName" jdbcType="VARCHAR" />
+        <result column="HEAD_PICTURE" property="headPicture" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_ActivePicPage">
+        personId,nickName,headPicture
+    </sql>
+    <select id="getAllscreenName" resultMap="ScreenListMap">
+        select * from user
+    </select>
+    
+    <select id="selectNum" resultType="java.lang.Integer">
+    	select max(num) from test
+    </select>
+    
+    <insert id="insertNum" parameterType="Map">
+    	insert into test(num) values(#{num});
+    </insert>
+</mapper>

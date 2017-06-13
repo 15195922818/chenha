@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd 
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd"
+       default-lazy-init="false">
+    <!-- Activates various annotations to be detected in bean classes: Spring's
+        @Required and @Autowired, as well as JSR 250's @Resource. -->
+    <!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+    <context:component-scan base-package="com.ai.web.service,com.ai.web.dao"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+   <!--  <task:executor id="executor" pool-size="5"/>
+    <task:scheduler id="scheduler" pool-size="10"/>
+    <task:annotation-driven executor="executor" scheduler="scheduler"/> -->
+
+    <!-- 导入Spring配置文件 -->
+    <import resource="applicationContext-dataSource.xml"/>
+    <!-- <import resource="applicationContext-redis.xml"/> -->
+    
+    
+    <!-- <import resource="applicationContext-bean.xml"/> -->
+</beans>
